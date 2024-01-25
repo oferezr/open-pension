@@ -1,0 +1,14 @@
+.loginForm {
+  width: 100%;
+  max-width: 48rem; /* Or whatever width you prefer */
+  margin: auto;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.errorMessage {
+  color: rgba(255, 0, 0, 0.805);
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+}

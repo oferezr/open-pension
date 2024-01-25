@@ -1,0 +1,305 @@
+/* START CSS BASELINE */
+
+/* taken from https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* these are some initial rules to standardize element display and behaviour */
+/* you can read more about why following the above link, or searching for */
+/* "css normalize" or "css reset" in your favorite search engine ;) */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* END CSS BASELINE */
+
+/* what is :root? https://developer.mozilla.org/en-US/docs/Web/CSS/:root */
+:root {
+  --primary: rgb(5, 190, 113);
+  --secondary: rgb(210, 166, 234);
+  --primary-variant:  rgb(5, 181, 108);
+  --link: rgb(0, 135, 252);
+  --light: rgb(255, 255, 255);
+  --dark: rgb(45, 43, 43);
+  --debug: rgb(239, 6, 72);
+  --gray: rgb(223, 222, 223);
+  --demo: rgb(254, 251, 217);
+  --demo-random: rgb(193, 243, 248);
+}
+
+/* a helper for debugging CSS. See the README for more information. */
+.css_debug * {
+  outline: 1px solid var(--debug);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-ubuntu);
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+a {
+  color: var(--link);
+}
+
+a.button {
+  text-decoration: none;
+}
+
+input, textarea, select, button, a.button {
+  border: 1px solid var(--gray);
+  padding: 0.25rem;
+}
+
+label {
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+}
+
+input, textarea, select {
+  margin-bottom: 1rem;
+}
+
+button, a.button {
+  font-size: 1.125rem;
+  background-color: var(--link);
+  color: var(--light);
+  margin: 1rem 0 0 0;
+  cursor: pointer;
+}
+
+/* #page-grid is used directly under body to create */
+/* a simple grid of #navbar, #main and #footer */
+#page-grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+#navbar {
+  color: var(--light);
+  background-color: var(--primary);
+  border-bottom: 8px solid var(--secondary);
+}
+
+#navbar .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 75px;
+  font-size: 1.5rem;
+}
+
+#navbar a {
+  color: var(--light);
+  font-size: 1.25rem;
+}
+
+#navbar .app-name a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+#navbar ul {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+}
+
+#navbar li {
+  margin-inline-start: 0.5rem;
+}
+
+#main .container {
+  display: grid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#main h1, #main h2, #main h3, #main h4, #main p, #main ul, #main ol {
+  margin-bottom: 1rem;
+}
+
+#footer {
+  color: var(--light);
+  background-color: var(--primary);
+  border-top: 8px solid var(--secondary);
+  animation: pulse 3s infinite;
+}
+
+#footer .container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100px;
+}
+
+/* START GRID AND LAYOUT HELPERS */
+
+/* wrap content sections in .container */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* .container adjustments for large screens, like laptops and desktops */
+@media (min-width: 992px) {
+  .container {
+    width: 992px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+/* END GRID AND LAYOUT HELPERS */
+
+/* START HELPER ATTRIBUTES */
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.fullheight {
+  height: 100vh;
+}
+
+.fullwidth {
+  width: 100vw;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.padding-4 {
+  padding: 4rem;
+}
+
+.padding-2 {
+  padding: 2rem;
+}
+
+.padding-1 {
+  padding: 1rem;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.text-xxl {
+  font-size: 2rem;
+}
+
+.text-xxxl {
+  font-size: 3rem;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.gray-bg {
+  background-color: var(--gray);
+}
+
+/* END HELPER ATTRIBUTES */
+
+/* START FANCY STUFF */
+@keyframes pulse {
+  0%, 100% {
+    background-color: var(--primary);
+  }
+  50% {
+    background-color: var(--primary-variant);
+  }
+}
+/* END FANCY STUFF */
+
+.demo-contactForm, .demo-blank {
+  background-color: var(--demo);
+}
+
+.demo-authentication {
+  background-color: var(--demo);
+}
+
+.demo-database {
+  background-color: var(--demo);
+}
+
+.demo-sheets {
+  background-color: var(--demo);
+}
+
+.demo-drive {
+  background-color: var(--demo);
+}
+
+.demo-viz {
+  background-color: var(--demo);
+}
+
+.demo-randomTeamGenerator {
+  background-color: var(--demo-random);
+}
+
+.demo-notes {
+  background-color: var(--demo);
+  font-size: 0.875rem;
+}

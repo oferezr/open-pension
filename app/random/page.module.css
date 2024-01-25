@@ -1,0 +1,97 @@
+#data {
+  font-family: var(--font-noto-serif);
+  font-weight: 900;
+  color: var(--light);
+}
+
+#actions {
+  width: 100%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  font-family: var(--font-noto-serif);
+  font-weight: 900;
+  background-color: var(--light);
+}
+
+#actionElements {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actionButton {
+  margin-top: 0;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  color: black;
+  background-color: white;
+  padding: 0.5rem 3rem;
+  border: 2px solid;
+  border-radius: 86px;
+  font-family: var(--font-noto-serif);
+  font-weight: 900;
+}
+
+.actionButton:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.studentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 150px;
+}
+
+.teamGrid {
+  padding-bottom: 150px;
+}
+
+.groupName {
+  font-family: var(--font-noto-sans);
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+.student {
+  font-size: 3rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.team {
+  font-size: 3rem;
+  color: black;
+  padding-bottom: 1rem;
+}
+
+.team span {
+  color: white;
+}
+
+.concept {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
+.concept span {
+  color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.currentTeamMember {
+  color: black;
+}
+
+.assignedStudent {
+  opacity: 30%;
+  text-decoration: line-through;
+}

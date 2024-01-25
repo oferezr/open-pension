@@ -1,0 +1,8 @@
+.contactForm {
+  width: 100%;
+  max-width: 48rem; /* Or whatever width you prefer */
+  margin: auto;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
