@@ -73,11 +73,11 @@ function extract_yearly_from_slider(yearly_slider: number) {
     return extract_value_from_slider(yearly_slider, MAX_YEARLY, MIN_YEARLY);
 }
 
-export function extract_deposite_interest_from_slider(interest_slider: number) {
+function extract_deposite_interest_from_slider(interest_slider: number) {
     return extract_value_from_slider(interest_slider, MAX_DEPOSITE_INTEREST, MIN_DEPOSITE_INTEREST);
 }
 
-export function extract_saving_interest_from_slider(interest_slider: number) {
+function extract_saving_interest_from_slider(interest_slider: number) {
     return extract_value_from_slider(-interest_slider, MIN_SAVING_INTEREST, MAX_SAVING_INTEREST);;
 }
 
