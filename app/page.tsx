@@ -4,9 +4,9 @@ import WebsiteScreen from '@/lib/components/website-screen';
 import { COURSE_WELCOME_TEXT } from '@/lib/config';
 import Image from 'next/image';
 import Link from 'next/link';
-import {saving_result} from '@/lib/utils/client'
-import {monthly_income} from '@/lib/utils/client'
-
+import {saving_result} from '@/lib/utils/client';
+import {monthly_income} from '@/lib/utils/client';
+import RouteSlider from '@/lib/components/route-slider';
 export default function Home() {
   const age = 20;
   const salary = 5800;
@@ -20,6 +20,8 @@ export default function Home() {
     <WebsiteScreen>
         <div className="center padding-2">
           <h1>Welcom to the pension calculator</h1>
+          <RouteSlider/>
+          <h3 id = "output">Blanck</h3>
           <h2>You will get {monthly.toLocaleString("en-US")}&#x20AA; (gross) monthly income on your retirment.</h2>
           <h2>You will have {total_savings.toLocaleString("en-US")}&#x20AA; in your saving by you get to your retiermnet.</h2>
           Calculated by the valus:
