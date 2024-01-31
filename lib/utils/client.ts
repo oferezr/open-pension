@@ -7,6 +7,11 @@ const compensation_deposite = 100 / 12;
 const initial_amount = 0;
 const MAX_YEARLY = 8;
 const MIN_YEARLY = 2;
+const MAX_DEPOSITE_INTEREST = 2;
+const MIN_DEPOSITE_INTEREST = 1;
+const MAX_SAVING_INTEREST = 1;
+const MIN_SAVING_INTEREST = 0.01;
+
 
 function compound_interest(init_price: number, monthly_deposite: number, yearly: number, years_of_deposites: number, intrest_rate: number) {
     // This is the basic compound interest calculator
@@ -48,11 +53,11 @@ function extract_yearly_from_slider(yearly_slider: number) {
 }
 
 function extract_deposite_interest_from_slider(interest_slider: number) {
-    return 1.5;
+    return MIN_DEPOSITE_INTEREST + interest_slider * (MAX_DEPOSITE_INTEREST - MIN_DEPOSITE_INTEREST);
 }
 
 function extract_saving_interest_from_slider(interest_slider: number) {
-    return 0.1;
+    return MAX_SAVING_INTEREST - interest_slider*(MAX_SAVING_INTEREST - MIN_SAVING_INTEREST);
 }
 
 export function saving_by_by_sliders(salery: number, age: number, intrest_slider: number, yearly_slider: number, is_male: boolean = true) {

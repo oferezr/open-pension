@@ -21,7 +21,7 @@ export default function Home() {
         <div className="center padding-2">
           <h1>Welcom to the pension calculator</h1>
           <RouteSlider/>
-          <h3 id = "output">Blanck</h3>
+          <h3 id = "output"></h3>
           <h2>You will get {monthly.toLocaleString("en-US")}&#x20AA; (gross) monthly income on your retirment.</h2>
           <h2>You will have {total_savings.toLocaleString("en-US")}&#x20AA; in your saving by you get to your retiermnet.</h2>
           Calculated by the valus:
