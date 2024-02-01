@@ -8,8 +8,14 @@
 .slider-container {
     display: flex;
     flex-wrap: wrap;
+    border-left-style: solid;
+    border-left-width:5px;
+    border-left-color: #74b9ff;
+    background-color: #81ecec;
+    padding: 2%;
+
+
   }
   .container .item {
     flex: 1 0 33%;
-    height: 50px;
   }
