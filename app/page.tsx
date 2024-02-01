@@ -12,14 +12,6 @@ export default function Home() {
         <div className="center padding-2">
           <h1>Welcom to the pension calculator</h1>
           <Simulator/>
-          
-          <Image
-            src="/huji.png"
-            alt="HUJI Logo"
-            width={320}
-            height={100}
-            priority
-          />
         </div>
     </WebsiteScreen>
   )
