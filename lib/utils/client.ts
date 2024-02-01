@@ -29,7 +29,7 @@ function compound_interest(init_amount: number, monthly_deposite: number, yearly
     return compt
 }
 
-export function saving_result(salery: number, age: number, saving_intrest: number, deposit_interest: number, yearly: number, is_male: boolean = true) {
+function saving_result(salery: number, age: number, saving_intrest: number, deposit_interest: number, yearly: number, is_male: boolean = true) {
     /**
      * This function calculate the total saving a persion will have when he retired, that is using the compound interest mechanism.
      * salary: person monthly salary
@@ -52,7 +52,7 @@ export function saving_result(salery: number, age: number, saving_intrest: numbe
     return Math.round(compound_interest(INITIAL_AMOUNT, mounthly_deposite, yearly, years_of_deposites, saving_intrest))
 }
 
-export function monthly_income(salery: number, age: number, saving_intrest: number, deposit_interest: number, yearly: number, is_male: boolean = true) {
+function monthly_income(salery: number, age: number, saving_intrest: number, deposit_interest: number, yearly: number, is_male: boolean = true) {
     /**
      * This function calculate the monthly income a persion will get when he retired, that is using saving result calculator.
      * salary: person monthly salary
