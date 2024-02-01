@@ -5,3 +5,11 @@
 /* you can read more about why following the above link, or searching for */
 /* "css normalize" or "css reset" in your favorite search engine ;) */
 
+.slider-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .item {
+    flex: 1 0 33%;
+    height: 50px;
+  }
