@@ -3,8 +3,11 @@
 export default function RouteSlider() {
     function display_total(){
         var output = document.getElementById("output");
-        var slider = document.getElementById("slider");
-        output.innerHTML = slider.value;
+        var slider = (document.getElementById("slider") as HTMLInputElement);
+        if (output){
+            output.innerHTML = slider?.value;
+        }
+        
     }
     return (
         <div>
