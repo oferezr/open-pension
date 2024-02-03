@@ -8,6 +8,11 @@ import FundDropDown from './simulator_input/fund-dropdown';
 
 const dataApiEndpoint = "https://data.gov.il/api/3/action/datastore_search?resource_id=6d47d6b5-cb08-488b-b333-f1e717b1e1bd";
 
+export interface ParentCompany{
+    id:number;
+    name:string;
+}
+
 interface RawFundsDataRow {
     FUND_ID: string;
     FUND_NAME: string;
@@ -65,6 +70,23 @@ function getFund(funds:FundsData|null, parent_company:number, interest_slider:nu
     return company_funds.filter(f=>f.STANDARD_DEVIATION>=std_to_serach);
 }
 
+function getUniqueParents(funds:FundsData):ParentCompany[] |null{
+    if(!funds){
+        return null
+    }
+    const uniques:number[] = [];
+    const uniques_companies:ParentCompany[] = [];
+    funds.result.map(val=>{
+        if(uniques.indexOf(val.PARENT_COMPANY_ID)==-1){
+            uniques.push(val.PARENT_COMPANY_ID);
+            const id = val.PARENT_COMPANY_ID
+            const name = val.PARENT_COMPANY_NAME;
+            uniques_companies.push({id, name} as ParentCompany)
+        }
+    })
+    return uniques_companies
+}
+
 export default function Simulator() {
     const [yearly_slider, setYearlySlider] = useState(0.5);
     const [interest_slider, setInterestSlider] = useState(0.5);
@@ -91,7 +113,7 @@ export default function Simulator() {
     return (
         <div>
             <BasicInput age={[age, setAge]} salary={[salary, setSalary]} is_male={[is_male, setIsMale]} />
-            <FundDropDown function={[parent_company, setParentCompany]} funds ={funds.result}/>
+            <FundDropDown function={[parent_company, setParentCompany]} funds ={getUniqueParents(funds)}/>
             <Slider function={[interest_slider, setInterestSlider]} title="Interest" left="Low Deposite interest" right="Low Saving interest" />
             <Slider function={[yearly_slider, setYearlySlider]} title="Yearly" left="Security" right="Yearly" />
             <div>
