@@ -4,6 +4,7 @@ import { monthly_income_by_by_sliders, saving_by_by_sliders } from '@/lib/utils/
 import { useEffect, useState } from 'react';
 import Slider from './simulator_input/slider';
 import BasicInput from './simulator_input/basic-input';
+import FundDropDown from './simulator_input/fund-dropdown';
 
 const dataApiEndpoint = "https://data.gov.il/api/3/action/datastore_search?resource_id=6d47d6b5-cb08-488b-b333-f1e717b1e1bd";
 
@@ -72,10 +73,10 @@ export default function Simulator() {
     const [is_male, setIsMale] = useState(true);
     const [funds, setFunds] = useState<FundsData | null>(null);
     const [fund, setFund] = useState<RawFundsDataRow|null>(null);
-    const [parent_company, setParentCompany] = useState(0);
+    const [parent_company, setParentCompany] = useState(163);
     const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, yearly_slider, is_male);
     const total_savings = saving_by_by_sliders(salary, age, interest_slider, yearly_slider, is_male);
-    const company_funds = getFund(funds,660,yearly_slider);
+    const company_funds = getFund(funds,parent_company,yearly_slider);
     
     useEffect(() => {
         getFunds().then(data => {
@@ -90,10 +91,19 @@ export default function Simulator() {
     return (
         <div>
             <BasicInput age={[age, setAge]} salary={[salary, setSalary]} is_male={[is_male, setIsMale]} />
+            <FundDropDown function={[parent_company, setParentCompany]} funds ={funds.result}/>
             <Slider function={[interest_slider, setInterestSlider]} title="Interest" left="Low Deposite interest" right="Low Saving interest" />
             <Slider function={[yearly_slider, setYearlySlider]} title="Yearly" left="Security" right="Yearly" />
             <div>
-                <p>{company_funds[0].FUND_NAME} | {company_funds[0].STANDARD_DEVIATION}</p>
+                <h3>Fund information</h3>
+                <ul>
+                    <li>Parent company: {parent_company}</li>
+                    <li>Fund: {company_funds[0].FUND_NAME}</li>
+                    <li>STD: {company_funds[0].STANDARD_DEVIATION}</li>
+                    <li>Saving interest: {company_funds[0].AVG_ANNUAL_MANAGEMENT_FEE}%</li>
+                    <li>Deposite interest: {company_funds[0].AVG_DEPOSIT_FEE}%</li>
+                    <li>AVG Anual yield: {company_funds[0].AVG_ANNUAL_YIELD_TRAILING_5YRS}%</li>
+                </ul>
             </div>
             <h2>You will get {monthly.toLocaleString("en-US")}&#x20AA; (gross) monthly income on your retirment.</h2>
             <h2>You will have {total_savings.toLocaleString("en-US")}&#x20AA; in your saving by you get to your retiermnet.</h2>
