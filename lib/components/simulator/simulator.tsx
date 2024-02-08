@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Slider from './simulator_input/slider';
 import BasicInput from './simulator_input/basic-input';
 import FundDropDown from './simulator_input/fund-dropdown';
+import FutureResult from './simulator_output/future_result';
 
 const dataApiEndpoint = "https://data.gov.il/api/3/action/datastore_search?resource_id=6d47d6b5-cb08-488b-b333-f1e717b1e1bd";
 
@@ -119,7 +120,7 @@ export default function Simulator() {
             <div>
                 <h3>Fund information</h3>
                 <ul>
-                    <li>Parent company: {parent_company}</li>
+                    <li>Parent company: {company_funds[0].PARENT_COMPANY_NAME}</li>
                     <li>Fund: {company_funds[0].FUND_NAME}</li>
                     <li>STD: {company_funds[0].STANDARD_DEVIATION}</li>
                     <li>Saving interest: {company_funds[0].AVG_ANNUAL_MANAGEMENT_FEE}%</li>
@@ -127,14 +128,7 @@ export default function Simulator() {
                     <li>AVG Anual yield: {company_funds[0].AVG_ANNUAL_YIELD_TRAILING_5YRS}%</li>
                 </ul>
             </div>
-            <h2>You will get {monthly.toLocaleString("en-US")}&#x20AA; (gross) monthly income on your retirment.</h2>
-            <h2>You will have {total_savings.toLocaleString("en-US")}&#x20AA; in your saving by you get to your retiermnet.</h2>
-            Calculated by the valus:
-            <ul>
-                <li>Age: {age}</li>
-                <li>Salary: {salary}</li>
-                <li>Male: {is_male}</li>
-            </ul>
+            <FutureResult monthly={monthly} total_savings={total_savings}/>
         </div>
 
     );
