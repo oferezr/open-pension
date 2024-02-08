@@ -5,124 +5,155 @@
 /* you can read more about why following the above link, or searching for */
 /* "css normalize" or "css reset" in your favorite search engine ;) */
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-:root{
-  --primary-color:#9EDA82;
-  --secondery-color:#376720;
-  --tertiary-color:#DAFFC9;
-  --text-color:#ffffff;
-  --primary-font:'Rubik' , sans-serif;
+
+:root {
+  --primary-color: #9EDA82;
+  --secondery-color: #376720;
+  --tertiary-color: #DAFFC9;
+  --text-color: #ffffff;
+  --primary-font: 'Rubik', sans-serif;
 }
-html, body{
+
+html,
+body {
   margin: 0;
 }
-#wrapper{
+
+#wrapper {
   position: relative;
 }
 
-.backgound-tilt-grid{
-  background-color:var(--primary-color) ;
-  height: 100%;
+.backgound-tilt-grid {
+  background-color: var(--primary-color);
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: -100;
   width: 100%;
+  padding: 10% 0;
+  padding-right: 5%;
 }
 
-.parent {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  height: 100%;
-  }
-/* .parent div{
-  border:1px solid black;
-} */
- 
-  .div1 { grid-area: 3 / 2 / 4 / 10; }
-  .div2 { grid-area: 4 / 2 / 5 / 10; 
-  padding-right: 86px;
+.backgound-tilt-grid div{
   position: relative;
-  top:-56px;
-  }
-  .div3 { grid-area: 5 / 2 / 6 / 10; 
-    position: relative;
-    top:-112px;
-  }
-  .div4 { grid-area: 6 / 2 / 7 / 10; 
-    padding-right: 86px;
-    position: relative;
-    top:-168px;
-  }
-  .div5 { grid-area: 7 / 2 / 8 / 10; 
-    position: relative;
-    top:-225px;
-  }
-  .div6 { grid-area: 8 / 2 / 9 / 10; 
-    padding-right: 86px;
-    position: relative;
-    top:-280px;
-  }
+}
 
-.landing{
+
+.div2 {
+  padding-right: 86px;
+  top: -56px;
+}
+
+.div3 {
+  top: -112px;
+}
+
+.div4 {
+  padding-right: 86px;
+  top: -168px;
+}
+
+.div5 {
+  top: -225px;
+}
+
+.div6 {
+  padding-right: 86px;
+  top: -280px;
+}
+
+.div7 {
+  top: -335px;
+}
+
+.div8 {
+  padding-right: 86px;
+  top: -390px;
+}
+
+.div9 {
+  top: -446px;
+}
+
+.div10 {
+  padding-right: 86px;
+  top: -503px;
+}
+
+.div11 {
+  top: -560px;
+}
+
+.div12 {
+  padding-right: 86px;
+  top: -615px;
+}
+
+.landing {
   font: var(--primary-font);
   padding: 1%;
   height: 96vh;
   position: relative;
 }
-.landing h1{
+
+.landing h1 {
   color: var(--text-color);
 }
-.landing .container{
+
+.landing .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 80%;
-  padding:0 2.5%;
+  padding: 0 2.5%;
 }
-.landing .spacer{
+
+.landing .spacer {
   width: 25%;
 }
-.landing-exp{
+
+.landing-exp {
   width: 35%;
 }
-.landing-exp h1{
+
+.landing-exp h1 {
   color: var(--secondery-color);
 }
 
-.landing-exp b{
+.landing-exp b {
   color: var(--secondery-color);
 }
-.landing-exp p{
+
+.landing-exp p {
   color: var(--text-color);
   font-size: 18pt;
   margin-bottom: 5%;
 }
+
 /* TODO: this style should be removed after integration */
-.landing-input{
+.landing-input {
   background-color: var(--tertiary-color);
   width: 40%;
   margin-top: 10%;
 }
 
 .slider-container {
-    display: flex;
-    flex-wrap: wrap;
-    border-left-style: solid;
-    border-left-width:5px;
-    border-left-color: #74b9ff;
-    background-color: #81ecec;
-    padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-left-color: #74b9ff;
+  background-color: #81ecec;
+  padding: 2%;
 
 
-  }
-  .container .item {
-    flex: 1 0 33%;
-  }
-  .slider-container label{
-    margin-left: 1%;
-    margin-right: 1%;
-  }
-  
+}
+
+.container .item {
+  flex: 1 0 33%;
+}
+
+.slider-container label {
+  margin-left: 1%;
+  margin-right: 1%;
+}
