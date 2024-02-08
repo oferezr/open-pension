@@ -2,8 +2,8 @@
 export default function LandingInput(props: any) {
 
     return (
-        <div>
-            landing input
+        <div className="landing-input">
+            קלט
         </div>
         
     );
