@@ -20,7 +20,7 @@ export default function Home() {
           {grid_rows.map(r=>
             <div className={"div"+r} key={"r"+r}>
             {grid_columns.map(n=><svg key={"r"+r+n} width="172" height="100" viewBox="0 0 172 99" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.99648 48.2609L84.005 1.39891L169.459 49.2532L84.9971 96.9002L1.99648 48.2609Z" fill="#9EDA82" stroke="#b0f19173" stroke-width="2" />
+              <path d="M1.99648 48.2609L84.005 1.39891L169.459 49.2532L84.9971 96.9002L1.99648 48.2609Z" fill="#9EDA82" stroke="#b0f19173" strokeWidth="2" />
             </svg>)}
           </div>
             )}
