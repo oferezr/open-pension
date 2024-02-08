@@ -6,9 +6,9 @@ import LandingInput from '@/lib/components/landing/landing-input';
 
 export default function Home() {
   const grid_columns = [1];
-  const grid_rows = [1,2,3,4,5,6,7,8,9,10,11,12]
-  const grid_item_width = 172;
-  for(let i=grid_item_width ; i<1920- 3*grid_item_width; i+=grid_item_width){
+  const grid_rows = [1,2,3,4,5,6]
+  const grid_item_width = 182;
+  for(let i=grid_item_width ; i<1920- 2*grid_item_width; i+=grid_item_width){
     grid_columns.push(i)
   }
 
@@ -24,10 +24,12 @@ export default function Home() {
       </div>
       <div className='backgound-tilt-grid'>
           {grid_rows.map(r=>
-            <div className={"div"+r} key={"r"+r}>
-            {grid_columns.map(n=><svg key={"r"+r+n} width={grid_item_width} height="100" viewBox="0 0 172 99" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.99648 48.2609L84.005 1.39891L169.459 49.2532L84.9971 96.9002L1.99648 48.2609Z" fill="#9EDA82" stroke="#b0f19173" strokeWidth="2" />
-            </svg>)}
+            <div className={"div"+r+" row"} key={"r"+r}>
+            {grid_columns.map(n=>
+            <svg key={"r"+r+n} width={grid_item_width} height="111" viewBox="0 0 182 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.93436 55.0096L91.9928 1.17027L180.094 55.0094L91.9931 109.828L1.93436 55.0096Z" stroke="#b0f19173" strokeWidth="2"/>
+            </svg>
+            )}
           </div>
             )}
       </div>

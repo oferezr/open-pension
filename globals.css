@@ -12,6 +12,9 @@
   --tertiary-color: #DAFFC9;
   --text-color: #ffffff;
   --primary-font: 'Rubik', sans-serif;
+  --grid-item-height:182px;
+  --grid-item-even-padding-right:90px;
+  --grid-item-width:111px;
 }
 
 html,
@@ -30,64 +33,9 @@ body {
   right: 0;
   z-index: -100;
   width: 100%;
-  padding: 10% 0;
-  padding-right: 5%;
+  padding: 5%;
 }
 
-.backgound-tilt-grid div{
-  position: relative;
-}
-
-
-.div2 {
-  padding-right: 86px;
-  top: -56px;
-}
-
-.div3 {
-  top: -112px;
-}
-
-.div4 {
-  padding-right: 86px;
-  top: -168px;
-}
-
-.div5 {
-  top: -225px;
-}
-
-.div6 {
-  padding-right: 86px;
-  top: -280px;
-}
-
-.div7 {
-  top: -335px;
-}
-
-.div8 {
-  padding-right: 86px;
-  top: -390px;
-}
-
-.div9 {
-  top: -446px;
-}
-
-.div10 {
-  padding-right: 86px;
-  top: -503px;
-}
-
-.div11 {
-  top: -560px;
-}
-
-.div12 {
-  padding-right: 86px;
-  top: -615px;
-}
 
 .landing {
   font: var(--primary-font);
