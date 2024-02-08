@@ -96,7 +96,6 @@ export default function Simulator() {
     const [salary, setSalary] = useState(5800);
     const [is_male, setIsMale] = useState(true);
     const [funds, setFunds] = useState<FundsData | null>(null);
-    const [fund, setFund] = useState<RawFundsDataRow|null>(null);
     const [parent_company, setParentCompany] = useState(163);
     const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, yearly_slider, is_male);
     const total_savings = saving_by_by_sliders(salary, age, interest_slider, yearly_slider, is_male);
