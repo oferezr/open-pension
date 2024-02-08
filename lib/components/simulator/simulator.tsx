@@ -6,6 +6,7 @@ import Slider from './simulator_input/slider';
 import BasicInput from './simulator_input/basic-input';
 import FundDropDown from './simulator_input/fund-dropdown';
 import FutureResult from './simulator_output/future_result';
+import PastResult from './simulator_output/past_result';
 
 const dataApiEndpoint = "https://data.gov.il/api/3/action/datastore_search?resource_id=6d47d6b5-cb08-488b-b333-f1e717b1e1bd";
 
@@ -117,17 +118,7 @@ export default function Simulator() {
             <FundDropDown function={[parent_company, setParentCompany]} funds ={getUniqueParents(funds)}/>
             <Slider function={[interest_slider, setInterestSlider]} title="Interest" left="Low Deposite interest" right="Low Saving interest" />
             <Slider function={[yearly_slider, setYearlySlider]} title="Yearly" left="Security" right="Yearly" />
-            <div>
-                <h3>Fund information</h3>
-                <ul>
-                    <li>Parent company: {company_funds[0].PARENT_COMPANY_NAME}</li>
-                    <li>Fund: {company_funds[0].FUND_NAME}</li>
-                    <li>STD: {company_funds[0].STANDARD_DEVIATION}</li>
-                    <li>Saving interest: {company_funds[0].AVG_ANNUAL_MANAGEMENT_FEE}%</li>
-                    <li>Deposite interest: {company_funds[0].AVG_DEPOSIT_FEE}%</li>
-                    <li>AVG Anual yield: {company_funds[0].AVG_ANNUAL_YIELD_TRAILING_5YRS}%</li>
-                </ul>
-            </div>
+            <PastResult fund={company_funds[0]}/>
             <FutureResult monthly={monthly} total_savings={total_savings}/>
         </div>
 
