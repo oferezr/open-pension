@@ -4,22 +4,106 @@
 /* these are some initial rules to standardize element display and behaviour */
 /* you can read more about why following the above link, or searching for */
 /* "css normalize" or "css reset" in your favorite search engine ;) */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+  --primary-color: #9EDA82;
+  --secondery-color: #376720;
+  --tertiary-color: #DAFFC9;
+  --text-color: #ffffff;
+  --primary-font: 'Rubik', sans-serif;
+  --grid-item-height:182px;
+  --grid-item-even-padding-right:90px;
+  --grid-item-width:111px;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+#wrapper {
+  position: relative;
+}
+
+.backgound-tilt-grid {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -100;
+  width: 100%;
+  padding: 5%;
+
+}
+.backgound-tilt-grid .row{
+  height: 111px;
+}
+
+
+.landing {
+  font: var(--primary-font);
+  padding: 1%;
+  position: relative;
+}
+
+.landing h1 {
+  color: var(--text-color);
+}
+
+.landing .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 2.5%;
+}
+
+.landing .spacer {
+  width: 25%;
+}
+
+.landing-exp {
+  width: 35%;
+}
+
+.landing-exp h1 {
+  color: var(--secondery-color);
+}
+
+.landing-exp b {
+  color: var(--secondery-color);
+}
+
+.landing-exp p {
+  color: var(--text-color);
+  font-size: 18pt;
+  margin-bottom: 5%;
+}
+
+/* TODO: this style should be removed after integration */
+.landing-input {
+  background-color: var(--tertiary-color);
+  width: 40%;
+  margin-top: 10%;
+}
 
 .slider-container {
-    display: flex;
-    flex-wrap: wrap;
-    border-left-style: solid;
-    border-left-width:5px;
-    border-left-color: #74b9ff;
-    background-color: #81ecec;
-    padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-left-color: #74b9ff;
+  background-color: #81ecec;
+  padding: 2%;
 
 
-  }
-  .container .item {
-    flex: 1 0 33%;
-  }
-  .slider-container label{
-    margin-left: 1%;
-    margin-right: 1%;
-  }
+}
+
+.container .item {
+  flex: 1 0 33%;
+}
+
+.slider-container label {
+  margin-left: 1%;
+  margin-right: 1%;
+}
