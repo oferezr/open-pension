@@ -19,7 +19,7 @@ export default function Home() {
         <div className='container'>
           <LandingExplanation />
           <div className='spacer'></div>
-          <LandingInput />
+          <LandingInput className='content-box'/>
         </div>
       </div>
       <div className='backgound-tilt-grid'>
