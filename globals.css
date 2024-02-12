@@ -161,3 +161,48 @@ body {
   margin-bottom: 5px;
   display: block;
 }
+
+.next-page{
+  background-image: url('/open-pension/images/arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-right: 20px;
+  width: 50px; 
+  height: 50px;
+  border-radius: 20px;
+  background-color: #1e3811;
+  color:#DAFFC9;
+  border: none ;
+  border-radius: 50%;
+  cursor: pointer;
+  size: 1000px;
+  position: absolute; /* Position the button absolutely within the container */
+  bottom: 50px; /* Position the button 10px from the bottom */
+  left: 50px;
+}
+
+.next-page::before {
+  content: ''; /* Add a pseudo-element to create the arrow */
+  position: absolute; /* Position the arrow relative to the button */
+  top: 50%; /* Align the arrow vertically in the middle */
+  right: 10px; /* Adjust the position of the arrow as needed */
+  transform: translateY(-50%); /* Center the arrow vertically */
+  width: 20px; /* Set the width of the arrow */
+  height: 20px; /* Set the height of the arrow */
+  background-image: url('/open-pension/images/arrow.svg'); /* Use the same arrow SVG as the button background */
+  background-size: cover; /* Ensure that the arrow fills the pseudo-element */
+}
+
+.next-page:loading{
+  background-image: url('/open-pension/images/arrow.svg');
+}
+
+.next-page:hover {
+  background-color: #132814; /* Darker green on hover */
+}
+
+.next-page:focus {
+  outline: none; /* Remove focus outline */
+}
+

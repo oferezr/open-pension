@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function LandingInput(props: any) {
     const [numberInputAge, setNumberInputAge] = useState('');
@@ -27,19 +28,20 @@ export default function LandingInput(props: any) {
         let inputValue = event.target.value;
         // Validate input: allow only numbers
         let numericInput = inputValue.replace(/\D/g, ''); // Remove non-numeric characters
-        // if (numericInput === '') {
-        //     numericInput = '0';
-        //     }
-        // Limit input range to 0-120
+
         if (numericInput !== '') {
             let numericValue = parseInt(numericInput);
             // Ensure numeric value is within the range of 0-120
-            numericValue = Math.min(Math.max(numericValue, 0), 120);
             inputValue = numericValue.toString(); // Convert back to string for input value
         }
             setNumberInputSal(numericInput);
 
         }
+
+        const handleButtonClick = () => {
+            window.location.href = "/simulator";
+          };
+
         
     return (
         <div className="content-box">
@@ -70,8 +72,8 @@ export default function LandingInput(props: any) {
                     <input type="text" id="numberInputSal" name="numberInput" value={numberInputSal} onChange={handleInputChangeSal} />
                 </div>
             </div>
-            <div className="landing-input">
-                <a href="/simulator">לסימולטור לחץ כאן</a>
+            <div className='button'>
+            <button onClick={handleButtonClick} className='next-page'> </button>
             </div>
         </div>
         
