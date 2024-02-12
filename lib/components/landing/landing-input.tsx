@@ -9,9 +9,6 @@ export default function LandingInput(props: any) {
         let inputValue = event.target.value;
         // Validate input: allow only numbers
         let numericInput = inputValue.replace(/\D/g, ''); // Remove non-numeric characters
-        // if (numericInput === '') {
-        //     numericInput = '0';
-        //     }
         // Limit input range to 0-120
         if (numericInput !== '') {
             let numericValue = parseInt(numericInput);
