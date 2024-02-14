@@ -98,7 +98,7 @@ function getUniqueParents(funds: FundsData): ParentCompany[] | null {
 
 export default function Simulator() {
     var sessionString:null|string = null;
-    if (typeof window!==undefined && typeof window.sessionStorage !==undefined) {
+    if (typeof window!=="undefined") {
         // getting user related values from landng 
         var sessionString = sessionStorage.getItem('userValDict');
     }
