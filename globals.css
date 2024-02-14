@@ -5,13 +5,22 @@
 /* you can read more about why following the above link, or searching for */
 /* "css normalize" or "css reset" in your favorite search engine ;) */
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@font-face {
+  font-family: "Ploni-light";
+  src: url("./public/ploni_aaa/ploni-light-aaa.otf");
+}
+@font-face {
+  font-family: "Ploni-bold";
+  src: url("./public/ploni_aaa/ploni-black-aaa.otf");
+}
 
 :root {
   --primary-color: #9EDA82;
   --secondery-color: #376720;
   --tertiary-color: #DAFFC9;
   --text-color: #ffffff;
-  --primary-font: 'Rubik', sans-serif;
+  --primary-font: 'Ploni-light';
+  --primary-font-bold: 'Ploni-bold';
   --grid-item-height:182px;
   --grid-item-even-padding-right:90px;
   --grid-item-width:111px;
@@ -42,13 +51,14 @@ body {
 
 
 .landing {
-  font: var(--primary-font);
+  font-family: var(--primary-font);
   padding: 1%;
   position: relative;
 }
 
 .landing h1 {
   color: var(--text-color);
+  font-family: var(--primary-font-bold);
 }
 
 .landing .container {
@@ -72,6 +82,7 @@ body {
 
 .landing-exp b {
   color: var(--secondery-color);
+  font-family: var(--primary-font-bold);
 }
 
 .landing-exp p {
@@ -154,7 +165,7 @@ body {
   border: 1px solid #376720; 
   border-radius: 5px;
   color:#376720;
-  font: var(--primary-font);
+  font-family: var(--primary-font);
 }
 
 .input-wrapper label {
