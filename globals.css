@@ -120,7 +120,7 @@ body {
 }
 
 /* Style for content box */
-.content-box {
+.simultor-input {
   flex: 1; /* Take up one-third of the available space */
   background-color: #DAFFC9;
   color: #376720;
@@ -134,7 +134,7 @@ body {
 }
 
 /* Style for binary selector label */
-.content-box label {
+.simultor-input label {
   display: inline-block; /* Ensure label is a block element */
   margin-bottom: 10px;
   direction: rtl;
@@ -142,7 +142,7 @@ body {
 }
 
 /* Style for binary selector input */
-.content-box input[type="checkbox"] {
+.simultor-input input[type="checkbox"] {
   position: absolute;
   right: 0; /* Position radio buttons to the right */
   top: 0;
