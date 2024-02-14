@@ -4,6 +4,7 @@ export default function BasicInput(props: any) {
     const [age, setAge] = props.age;
     const [salary, setSalary] = props.salary;
     const [is_male, setIsMale] = props.is_male;
+    //TODO : make it so on change the actual user data will be changed.
     function change_age() {
         var age_element = (document.getElementById("age") as HTMLInputElement);
         setAge(age_element?.value);
@@ -25,9 +26,9 @@ export default function BasicInput(props: any) {
             <input type="number" id ="salary" onChange={change_slary} value={salary}/>
             <br/>
             <div>
-            <input type="radio" name="gender" value={1} onChange={change_is_male}/>
+            <input type="radio" name="gender" value={1} checked={is_male} onChange={change_is_male}/>
               Male
-              <input type="radio" name="gender" value={0} onChange={change_is_male} />
+              <input type="radio" name="gender" value={0} checked={!is_male} onChange={change_is_male} />
               Female
             </div>
             

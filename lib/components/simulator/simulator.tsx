@@ -7,6 +7,7 @@ import BasicInput from './simulator_input/basic-input';
 import FundDropDown from './simulator_input/fund-dropdown';
 import FutureResult from './simulator_output/future_result';
 import PastResult from './simulator_output/past_result';
+//import {UserValDict} from '../../lib/components/landing/landing-input';
 
 const dataApiEndpoint = "https://data.gov.il/api/3/action/datastore_search?resource_id=6d47d6b5-cb08-488b-b333-f1e717b1e1bd";
 
@@ -36,6 +37,12 @@ interface RawFundsData {
 
 interface FundsData {
     result: RawFundsDataRow[];
+}
+
+interface UserValDict {
+    numberInputSal:  number;
+    numberInputAge: number;
+    isMale: boolean;
 }
 
 async function getRawFundsData(): Promise<RawFundsData> {
@@ -90,17 +97,26 @@ function getUniqueParents(funds:FundsData):ParentCompany[] |null{
 }
 
 export default function Simulator() {
+    // getting user related values from landng 
+    var sessionString = sessionStorage.getItem('userValDict');
+    // TODO : import UserValDict interface to creat ONE SOURCE OF TRUTH.
+    var userValDict: UserValDict = sessionString ? JSON.parse(sessionString) :
+     { numberInputAge: '',  numberInputSal:  '', isMale:''};
+    console.log(userValDict);
     const [yearly_slider, setYearlySlider] = useState(0.5);
     const [interest_slider, setInterestSlider] = useState(0.5);
-    const [age, setAge] = useState(20);
-    const [salary, setSalary] = useState(5800);
-    const [is_male, setIsMale] = useState(true);
+    const [age, setAge] = useState(userValDict.numberInputAge);
+    const [salary, setSalary] = useState(userValDict.numberInputSal);
+    const [is_male, setIsMale] = useState(userValDict.isMale);
     const [funds, setFunds] = useState<FundsData | null>(null);
     const [parent_company, setParentCompany] = useState(163);
     const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, yearly_slider, is_male);
     const total_savings = saving_by_by_sliders(salary, age, interest_slider, yearly_slider, is_male);
     const company_funds = getFund(funds,parent_company,yearly_slider);
     
+   
+
+
     useEffect(() => {
         getFunds().then(data => {
             setFunds(data);
