@@ -1,5 +1,5 @@
 'use client'
-import { useNavigate } from 'react-router-dom';
+
 import { useState, ChangeEvent } from 'react';
 import Image from 'next/image';
 
@@ -58,13 +58,17 @@ export default function LandingInput(props: any) {
             var userValDict =   {numberInputSal:  numberInputSal,
                                 numberInputAge: numberInputAge,
                                 isMale: isMale};
-                            
-            sessionStorage.setItem('userValDict', JSON.stringify(userValDict));
+            if(window && window.sessionStorage){
+
+                sessionStorage.setItem('userValDict', JSON.stringify(userValDict));
 
             window.location.href = "/simulator";
             // navigate('/simulator', { state: { numberInputSal:  numberInputSal,
             //                                   numberInputAge: numberInputAge,
             //                                   selectedRetirementValue: selectedRetirementValue} });
+            }
+                            
+            
           };
 
         
