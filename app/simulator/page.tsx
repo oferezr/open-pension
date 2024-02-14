@@ -1,12 +1,20 @@
 /// <reference lib="dom" />
 
-import Simulator from '@/lib/components/simulator/simulator';
+import FundInput from "@/lib/components/simulator/simulator_input/fund-input";
+import PersonalInput from "@/lib/components/simulator/simulator_input/personal-input";
+import RouteInput from "@/lib/components/simulator/simulator_input/route-input";
+
 export default function Home() {
   
   return (
-        <div className="center padding-2">
-          <h1>Welcom to the pension calculator</h1>
-          <Simulator/>
+        <div dir='rtl'>
+          <h1>הסדנא</h1>
+            <PersonalInput/>
+         
+            <RouteInput/>
+          
+            <FundInput/>
+          {/* <Comparsion/> */}
         </div>
   )
 }
