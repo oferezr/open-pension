@@ -123,7 +123,7 @@ body {
 .simultor-input {
   flex: 1; /* Take up one-third of the available space */
   background-color: #DAFFC9;
-  color: #376720;
+  color: #000000;
   padding: 20px;
   border-radius: 16px;
   margin-bottom: 20px; 
@@ -157,15 +157,13 @@ body {
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  color:#376720
 }
 
 .input-wrapper input {
   background-color: #DAFFC9;
-  border: 1px solid #376720; 
+  border: 1px solid var(--secondery-color); 
   border-radius: 5px;
-  color:#376720;
-  font-family: var(--primary-font);
+  color:#000000;
 }
 
 .input-wrapper label {
@@ -215,5 +213,45 @@ body {
 
 .next-page:focus {
   outline: none; /* Remove focus outline */
+}
+
+.subtext{
+  font-family: var(--primary-font);
+  font-size: 9pt;
+}
+
+/* Hide the default radio input */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Style the custom radio selector */
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--secondery-color); 
+}
+
+/* Style the checked state of the custom radio selector */
+.radio-container input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--secondery-color);
+  border: 1px solid var(--secondery-color); 
+  border-radius: 50%;
+}
+
+/* Hover effect for the custom radio selector */
+.radio-container:hover .checkmark {
+  background-color: var(--secondery-color);
 }
 

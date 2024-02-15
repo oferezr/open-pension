@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, ChangeEvent } from 'react';
-import Image from 'next/image';
 
 
 export default function LandingInput(props: any) {
