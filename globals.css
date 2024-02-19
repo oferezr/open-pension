@@ -3,24 +3,34 @@
 /* taken from https://www.joshwcomeau.com/css/custom-css-reset/ */
 /* these are some initial rules to standardize element display and behaviour */
 /* you can read more about why following the above link, or searching for */
-/* "css normalize" or "css reset" in your favorite search engine ;) */
+/* "css norlize" or "css reset" in your favorite search engine ;) */
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @font-face {
-  font-family: "Ploni-light";
-  src: url("./public/ploni_aaa/ploni-light-aaa.otf");
+  font-family: "Ploni-regular";
+  src: url("./public/ploni_aaa/ploni-regular-aaa.otf");
 }
 @font-face {
   font-family: "Ploni-bold";
   src: url("./public/ploni_aaa/ploni-black-aaa.otf");
 }
+@font-face {
+    font-family: "Ploni-demi-bold";
+    src: url("./public/ploni_aaa/ploni-demibold-aaa.otf");
+  }
+@font-face {
+    font-family: "Ploni-ultra-bold";
+    src: url("./public/ploni_aaa/ploni-ultrabold-aaa.otf");
+  }
 
 :root {
   --primary-color: #9EDA82;
   --secondery-color: #376720;
   --tertiary-color: #DAFFC9;
   --text-color: #ffffff;
-  --primary-font: 'Ploni-light';
-  --primary-font-bold: 'Ploni-bold';
+  --primary-font: 'Ploni-regular';
+  --primary-font-demi: 'Ploni-demi-bold';
+  --primary-font-ultra: 'Ploni-ultra-bold';
+  --primary-font-bold: 'Ploni-Bold';
   --grid-item-height:182px;
   --grid-item-even-padding-right:90px;
   --grid-item-width:111px;
@@ -162,68 +172,42 @@ h1 a{
 }
 .simulator{
   display: flex;
-
+  /* flex-direction: column;
+  width: 60%; */
 }
 .simulator .right{
-  flex: 0 0 45%;
+  flex: 0 0 55%;
 }
 .simulator .left{
   flex: 0 0 60%;
 }
 
-/* Style for content box */
 .simultor-input {
-  flex: 1; /* Take up one-third of the available space */
-  background-color: #DAFFC9;
-  color: #000000;
-  padding: 20px;
-  border-radius: 16px;
-  margin-bottom: 20px; 
-  display: flex; /* Use flexbox layout */
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  margin: 0.5% 3%;
-  padding: 2% 3%;
-  font-family: var(--primary-font);
+    background-color: #DAFFC9;
+    color: #000000;
+    /* padding: 20px; */
+    border-radius: 16px;
+    /* margin-bottom: 20px;  */
+    display: flex;
+    flex-direction: row; /* Arrange children in a row */
+    align-items: center; /* Align items vertically in the center */
+    position: relative;
+    margin: 3%;
+    padding: 3% 2%;
+    font-family: var(--primary-font);
 }
- 
 
 .simultor-input b{
   font-family: var(--primary-font-bold);
 }
-.simultor-input .header{
-  display: flex;
-  width: 80%;
-}
-.simultor-input svg{
-  flex:0 0 15%;
-}
-.simultor-input h3{
-  font-family: var(--primary-font-bold);
-  flex:0 0 85%;
-  margin: 3%;
-}
-.simultor-input button{
-  background-color: var(--secondery-color);
-  border: none;
-  color: #ffffff;
-  font-family: var(--primary-font-bold);
-  border-radius: 15px;
-  padding: 1% 2.5%;
-  margin-top: 10%;
-}
-.simultor-input button:hover{
-  background-color: var(--primary-color);
-}
 
-/* Style for binary selector label */
-.simultor-input label {
-  display: inline-block; /* Ensure label is a block element */
+
+/* .simultor-input label {
+  display: inline-block; 
   margin-bottom: 10px;
   direction: rtl;
   text-align: right;
-}
+} */
 
 /* Style for binary selector input */
 .simultor-input input[type="checkbox"] {
@@ -233,27 +217,70 @@ h1 a{
   margin-left: 10px; /* Add spacing between radio buttons */
 }
 
-/* .binary-selector-container {
-  display: flex;
-  justify-content: flex-end;
-} */
+.icon{
+    align-self: flex-start;
+    margin-left: 10px;
+}
 
-.input-wrapper {
+.header{
+    font-family: var(--primary-font-ultra);
+    font-size: 32pt;
+    margin-top: 10px;
+    margin-bottom: 24px;
+    
+}
+
+.main-content{
+    flex:1;
+    font-family: var(--primary-font);
+    margin-left: 44px;
+}
+
+.intro-text{
+    font-family: var(--primary-font);
+    margin-bottom: 24px;
+    margin-top: 15px;
+    font-size:24pt;
+}
+
+.arrow{
+    align-self: flex-start;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='52' viewBox='0 0 28 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.9108 14.9991L25.957 31.3525L1.86453 31.3525L13.9108 14.9991Z' fill='%23194E00'/%3E%3C/svg%3E%0A");    
+    /* background-image: url('.open-pension/public/arrow-open.svg'); */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    width: 50px; 
+    height: 50px;
+    cursor: pointer;
+    background-color: #DAFFC9;
+    border: none;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.input-wrapper input {
+.wrapper input {
   background-color: #DAFFC9;
-  border: 1px solid var(--secondery-color); 
-  border-radius: 5px;
+  border: 3px solid #000000; 
+  border-radius: 16px;
   color:#000000;
+  font-family: var(--primary-font);
+  font-size: 24pt;
 }
 
-.input-wrapper label {
+.wrapper input, textarea{
+    padding: 10px;
+}
+
+.wrapper label {
   margin-bottom: 5px;
+  font-family: var(--primary-font-demi);
+  font-size: 24pt;
   display: block;
 }
+
 
 .next-page{
   background-image: url('/open-pension/images/arrow.svg');
@@ -301,7 +328,21 @@ h1 a{
 
 .subtext{
   font-family: var(--primary-font);
-  font-size: 9pt;
+  font-size: 20pt;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-container input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.gender{
+    padding-right: 10px;
+    font-family: var(--primary-font);
 }
 
 /* Hide the default radio input */
@@ -318,9 +359,27 @@ h1 a{
   height: 20px;
   border-radius: 50%;
   border: 1px solid var(--secondery-color); 
+  
+}
+    /* margin-right: 10px;  */
+
+
+
+.checkmark::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially hide the inner circle */
 }
 
-/* Style the checked state of the custom radio selector */
+/* Style the checked state of the custom radio selector
 .radio-container input:checked + .checkmark::after {
   content: '';
   position: absolute;
@@ -330,13 +389,17 @@ h1 a{
   width: 10px;
   height: 10px;
   background-color: var(--secondery-color);
-  border: 1px solid var(--secondery-color); 
+  border: 2px solid var(--secondery-color); 
   border-radius: 50%;
-}
+} */
 
-/* Hover effect for the custom radio selector */
 .radio-container:hover .checkmark {
   background-color: var(--secondery-color);
+}
+
+.radio-container input[type="radio"]:checked + .radio-custom::after {
+    background-color: #000; /* Change color when checked */
+    opacity: 1; /* Show the inner circle when checked */
 }
 /*Slider new*/
 .range-input {
@@ -422,3 +485,4 @@ h1 a{
   margin: 0;
   color: var(--secondery-color);
 }
+
