@@ -21,6 +21,7 @@ export default function RootLayout({ children } : { children: ReactNode }) {
   const bodyClassNames = `${ubuntu.variable} ${process.env.CSS_DEBUG}`
   return (
     <html>
+      <title>Open Pension</title>
       <body className={bodyClassNames}>
         <div id="page-grid">
           {children}

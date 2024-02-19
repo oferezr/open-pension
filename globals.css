@@ -38,7 +38,6 @@ body{
   background-color: var(--primary-color);
 }
 .backgound-tilt-grid {
-  
   position: absolute;
   top: 0;
   right: 0;
@@ -47,6 +46,17 @@ body{
   margin: 5%;
   overflow: hidden;
 }
+
+.output-tiles .backgound-tilt-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -100;
+  width: 50%;
+  margin: 5% 45% 5% 5%;
+  overflow: hidden;
+}
+
 .backgound-tilt-grid .row{
   height: 36px;
   display: flex;
@@ -87,6 +97,10 @@ h1 {
   color: #ffffff;
   font-family: var(--primary-font-bold);
   margin-right: 3%;
+}
+h1 a{
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .landing-exp b {
@@ -146,6 +160,16 @@ h1 {
   color: var(--secondery-color);
   font-family: var(--primary-font-bold);
 }
+.simulator{
+  display: flex;
+
+}
+.simulator .right{
+  flex: 0 0 45%;
+}
+.simulator .left{
+  flex: 0 0 60%;
+}
 
 /* Style for content box */
 .simultor-input {
@@ -159,7 +183,6 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  width: 40%;
   margin: 0.5% 3%;
   padding: 2% 3%;
   font-family: var(--primary-font);
@@ -368,4 +391,34 @@ h1 {
 }
 .range-input:focus::-moz-range-thumb {
   box-shadow: 0 0 0 13px rgba(55, 103, 32, .2)    
+}
+
+/*Simulator output*/
+.pred-elements{
+  background-color: var(--tertiary-color);
+  width: 30%;
+  padding: 0.2% 0.2% 1% 0.2%;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 3%;
+}
+.pred-elements .inner{
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-color);
+  padding: 5% 2%;
+  border-radius: 20px;
+}
+.pred-elements .inner .elm{
+  flex: 0 0 50%;
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--primary-font-bold);
+  padding-top: 3%;
+}
+.pred-elements .inner .elm h4{
+  margin: 0;
+  color: var(--secondery-color);
 }
