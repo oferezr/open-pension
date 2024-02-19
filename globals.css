@@ -11,13 +11,14 @@
 }
 @font-face {
   font-family: "Ploni-bold";
-  src: url("./public/ploni_aaa/ploni-black-aaa.otf");
+  src: url("./public/ploni_aaa/ploni-ultrabold-aaa.otf");
 }
 
 :root {
   --primary-color: #9EDA82;
   --secondery-color: #376720;
   --tertiary-color: #DAFFC9;
+  --forth-color:#CEF7BB;
   --text-color: #ffffff;
   --primary-font: 'Ploni-light';
   --primary-font-bold: 'Ploni-bold';
@@ -396,29 +397,52 @@ h1 a{
 /*Simulator output*/
 .pred-elements{
   background-color: var(--tertiary-color);
-  width: 30%;
-  padding: 0.2% 0.2% 1% 0.2%;
-  border-radius: 20px;
+  width: 13%;
+  /* padding: 0.2% 0.2% 1% 0.2%; */
+  border-radius: 15px;
   position: absolute;
   bottom: 0;
   left: 0;
   margin: 3%;
 }
-.pred-elements .inner{
-  display: flex;
-  justify-content: center;
-  background-color: var(--primary-color);
-  padding: 5% 2%;
-  border-radius: 20px;
-}
-.pred-elements .inner .elm{
-  flex: 0 0 50%;
+
+.pred-elements > div:nth-child(odd){
   text-align: center;
-  color: #ffffff;
-  font-family: var(--primary-font-bold);
-  padding-top: 3%;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  }
+.pred-elements > div:nth-child(odd) h4{
+  font-size: 25px;
 }
-.pred-elements .inner .elm h4{
+  
+.pred-elements > div:nth-child(even){
+background-color: var(--forth-color);
+border-radius: 0px 0px 15px 15px;
+display: flex;
+justify-content: right;
+padding-top: 5%;
+  padding-bottom: 5%;
+}
+.pred-elements h4, p{
   margin: 0;
+  padding: 0;
+}
+.pred-elements h4{
+  font-family: var(--primary-font-bold);
   color: var(--secondery-color);
 }
+
+.pred-elements p{
+  font-family: var(--primary-font);
+  color: var(--secondery-color);
+  margin-top: -8px;
+}
+.pred-elements > div:nth-child(even) >div:nth-child(odd){
+  flex:0 0 35%;
+  text-align: left;
+  padding-left: 5%;
+  }
+  .pred-elements > div:nth-child(even) >div:nth-child(even){
+    flex:0 0 60%;
+    text-align: right;
+    }
