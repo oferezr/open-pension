@@ -1,20 +1,20 @@
 export default function RouteInput(props: any) {
     const [route, setRoute] = props.function;
-    const primaryColor =  "#9EDA82";
-    const seconderyColor= "#376720";
+    const primaryColor = "#9EDA82";
+    const seconderyColor = "#376720";
     function change_value() {
         var slider = (document.getElementById("route_slider") as HTMLInputElement);
         setRoute(slider?.value);
         const sliderVal = parseFloat(slider?.value);
         const progress = (sliderVal / 1) * 100;
         slider.style.background = `linear-gradient(to left, ${seconderyColor} ${progress}%, ${primaryColor} ${progress}%)`;
-        
+
     }
-    
-    
+
+
     return (
         <div className="simultor-input">
-            <div className="icon">                
+            <div className="icon">
                 <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="20.7407" cy="14.8139" r="13.6972" fill="#9EDA82" />
                     <path d="M25.0312 7.39883V6.55747L34.429 1.1167L44.0532 6.55747V7.39883L39.326 10.0912L34.5989 12.7835L25.0312 7.39883Z" fill="#376720" />
@@ -31,7 +31,7 @@ export default function RouteInput(props: any) {
                     <h3>2. איפה הכסף שלי?</h3>
                 </div>
 
-                <div className="intro-text"> 
+                <div className="intro-text">
                     <p>
                         כדי להגיע לגיל הפרישה עם כמה שיותר כסף, חשוב להשקיע את כספי החסכון באופן חכם מסלול שמתאים להעדפות שלנו.
                     </p>
@@ -39,28 +39,37 @@ export default function RouteInput(props: any) {
                         <b>מה זה מסלול?</b> אופן השקעת החיסכון שלנו על די קרן הפסניה.
                         המסלול מורכב פרמטרים כמו: ביטחון ותשואה המשתנים במשקלם בין המסלולים השונים.
                     </p>
-                    <p>
-                        <b>ביטחון - </b>מסלול עם בטחון גבוהה מתבטא ברווח קטן, אך גם פחות סיכוי להפסד הכסף.
-                    </p>
-                    <p>
-                        <b>תשואה - </b>מססלול עם סיכון גבוה מתבטא ברווח גבוה אך גם סיכוי גבוה יותר להפסד של הכסף.
-                        *תשואה- רווח שאותו תקבלו מההשקעות של קרן הפנסיה
-                    </p>
+                    <div className="slider-box">
+                    <b>מה אתם מעדיפים?</b> מקמו את עצמכם על הסליידר <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9.5" cy="9.5" r="8.94118" stroke="#376720" stroke-width="1.11765" />
+                        <path d="M8.80919 12.0566C8.72481 9.49701 11.4813 9.62359 11.4813 7.79531C11.4813 6.93743 10.8765 6.45926 9.8499 6.45926C8.82325 6.45926 8.09194 7.04994 7.78254 8.3016L6.33398 7.95001C6.68558 6.07955 8.06381 5.03883 10.0327 5.06696C11.9454 5.09509 13.0845 5.96704 13.0845 7.61248C13.0845 10.158 10.2296 10.2002 10.2859 12.0566H8.80919ZM9.55456 15.1365C8.97795 15.1365 8.52791 14.6865 8.52791 14.124C8.52791 13.5473 8.97795 13.0973 9.55456 13.0973C10.1171 13.0973 10.5812 13.5473 10.5812 14.124C10.5812 14.6865 10.1171 15.1365 9.55456 15.1365Z" fill="#376720" />
+                    </svg>
+
+                    <div className="slider-container">
+                        <div className="item">בטחון</div>
+                        <input type="range" min="0" max="1" step="0.05" onChange={change_value} id="route_slider" className="range-input" />
+                        <div className="item">תשואה</div>
+                        <div className="slider-background">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="slider-concepts">
+                    <div className="slider-box">
+                        <b>תשואה (רווח)-</b> מסלול בעל סיכון גבוה להפסד הכסף, אבל עם רווח גדול יותר.
+                    </div>
+                    <div className="slider-box">
+                        <b>ביטחון -</b> מסלול בעל סיכון נמוך להפסד הכסף, אבל עם רווח קטן יותר.
+                    </div>
+                    
+                    </div>
+                    
                 </div>
 
-                <b>בחרו איזה מרכיב יותר חשוב לכם:</b>
-                <div className="slider-container">
-                    <div className="item">בטחון</div>
-                        <input type="range" min="0" max="1" step="0.05" onChange={change_value} id="route_slider" className="range-input" />
-                    <div className="item">תשואה</div>
-                    <div className="slider-background">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <button>איך לא לצאת פרייאר</button>
+
             </div>
         </div>
     )

@@ -131,6 +131,22 @@ h1 a{
   width: 40%;
   margin-top: 10%;
 }
+.slider-box{
+  background-color: var(--forth-color);
+  padding: 2%;
+  border-radius: 15px;
+}
+.slider-concepts{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.slider-concepts .slider-box{
+  flex: 0 0  45%;
+  margin: 0  1%;
+}
 
 .slider-container {
   display: flex;
@@ -169,7 +185,7 @@ h1 a{
   flex:0 0 10%;
   text-align: center;
   color: var(--secondery-color);
-  font-family: var(--primary-font-bold);
+  font-family: var(--primary-font-demi);
 }
 .simulator{
   display: flex;
@@ -409,8 +425,8 @@ h1 a{
   width: 100%;
   cursor: pointer;
   outline: none;
-  height: 2px;
-  margin: 2% ;
+  height: 4px;
+  margin: 4% 2% ;
   background: var(--primary-color);
 }
 #route_slider{
