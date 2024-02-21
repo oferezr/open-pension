@@ -26,6 +26,7 @@
   --primary-color: #9EDA82;
   --secondery-color: #376720;
   --tertiary-color: #DAFFC9;
+  --forth-color:#CEF7BB;
   --text-color: #ffffff;
   --primary-font: 'Ploni-regular';
   --primary-font-demi: 'Ploni-demi-bold';
@@ -68,12 +69,12 @@ body{
 }
 
 .backgound-tilt-grid .row{
-  height: 36px;
+  height: 25px;
   display: flex;
 }
 
 .backgound-tilt-grid > div:nth-child(even){
-  margin-right: 70.5px;
+  margin-right: 50px;
 }
 
 
@@ -106,7 +107,8 @@ body{
 h1 {
   color: #ffffff;
   font-family: var(--primary-font-bold);
-  margin-right: 3%;
+  margin-left: 35%;
+  text-align: left;
 }
 h1 a{
   color: #ffffff;
@@ -120,7 +122,7 @@ h1 a{
 
 .landing-exp p {
   color: var(--text-color);
-  font-size: 18pt;
+  font-size: 18px;
   margin-bottom: 5%;
 }
 
@@ -129,6 +131,22 @@ h1 a{
   background-color: var(--tertiary-color);
   width: 40%;
   margin-top: 10%;
+}
+.slider-box{
+  background-color: var(--forth-color);
+  padding: 2%;
+  border-radius: 15px;
+}
+.slider-concepts{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.slider-concepts .slider-box{
+  flex: 0 0  45%;
+  margin: 0  1%;
 }
 
 .slider-container {
@@ -168,7 +186,7 @@ h1 a{
   flex:0 0 10%;
   text-align: center;
   color: var(--secondery-color);
-  font-family: var(--primary-font-bold);
+  font-family: var(--primary-font-demi);
 }
 .simulator{
   display: flex;
@@ -260,7 +278,7 @@ h1 a{
 .header{
     order:1;
     font-family: var(--primary-font-ultra);
-    font-size: 32pt;
+    font-size: 32px;
     margin-top: 10px;
     margin-bottom: 24px;
     
@@ -276,7 +294,7 @@ h1 a{
     font-family: var(--primary-font);
     margin-bottom: 24px;
     margin-top: 15px;
-    font-size:24pt;
+    font-size:24px;
 }
 
 .arrow{
@@ -302,7 +320,7 @@ h1 a{
   border-radius: 16px;
   color:#000000;
   font-family: var(--primary-font);
-  font-size: 24pt;
+  font-size: 24px;
 }
 
 .wrapper input, textarea{
@@ -312,7 +330,7 @@ h1 a{
 .wrapper label {
   margin-bottom: 5px;
   font-family: var(--primary-font-demi);
-  font-size: 24pt;
+  font-size: 24px;
   display: block;
 }
 
@@ -363,7 +381,7 @@ h1 a{
 
 .subtext{
   font-family: var(--primary-font);
-  font-size: 20pt;
+  font-size: 20px;
 }
 
 .radio-container {
@@ -443,8 +461,8 @@ h1 a{
   width: 100%;
   cursor: pointer;
   outline: none;
-  height: 2px;
-  margin: 2% ;
+  height: 4px;
+  margin: 4% 2% ;
   background: var(--primary-color);
 }
 #route_slider{
@@ -493,30 +511,31 @@ h1 a{
 
 /*Simulator output*/
 .pred-elements{
-  background-color: var(--tertiary-color);
-  width: 30%;
-  padding: 0.2% 0.2% 1% 0.2%;
-  border-radius: 20px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 3%;
-}
-.pred-elements .inner{
-  display: flex;
-  justify-content: center;
-  background-color: var(--primary-color);
-  padding: 5% 2%;
-  border-radius: 20px;
-}
-.pred-elements .inner .elm{
-  flex: 0 0 50%;
-  text-align: center;
-  color: #ffffff;
-  font-family: var(--primary-font-bold);
-  padding-top: 3%;
-}
-.pred-elements .inner .elm h4{
-  margin: 0;
-  color: var(--secondery-color);
-}
+    background-color: var(--tertiary-color);
+    width: 30%;
+    padding: 0.2% 0.2% 1% 0.2%;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 3%;
+  }
+  .pred-elements .inner{
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 5% 2%;
+    border-radius: 20px;
+  }
+  .pred-elements .inner .elm{
+    flex: 0 0 50%;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--primary-font-bold);
+    padding-top: 3%;
+  }
+  .pred-elements .inner .elm h4{
+    margin: 0;
+    color: var(--secondery-color);
+  }
+  
