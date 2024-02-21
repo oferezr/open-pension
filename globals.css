@@ -119,7 +119,33 @@ h1 a{
   color: var(--secondery-color);
   font-family: var(--primary-font-bold);
 }
-
+#hover{
+  visibility: hidden;
+  /* background-image:url("public/hover-backgournd.svg"); */
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
+  background-color: var(--secondery-color);
+  border-radius: 10px;
+  width: 65%;
+  /* height: ; */
+  font-size: 16px;
+  position: absolute;
+  z-index: 1;
+  color: var(--forth-color);
+  padding:10px 35px;
+  top:53%;
+  right: 94%;
+}
+#hover:before {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  right: -30px;
+  top: 35%;
+  border: 15px solid transparent;
+  border-left-color: var(--secondery-color);
+}
 .landing-exp p {
   color: var(--text-color);
   font-size: 18px;
