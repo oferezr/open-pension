@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <div dir='rtl'>
-      <h1><a href="http://localhost:3000/">פנסיה פתוחה</a></h1>
+      
       <div className="simulator">
         <div className="right">
           <PersonalInput age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
@@ -67,6 +67,7 @@ export default function Home() {
           <FundInput />
         </div>
         <div className="left">
+        <h1><a href="http://localhost:3000/">פנסיה פתוחה</a></h1>
           <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad}/>
         </div>
       </div>
