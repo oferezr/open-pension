@@ -102,11 +102,9 @@ const handleToggleTab = () => {
                         </svg>
                     </div>   
                     <div className='main-content'>
-
                         <div className='header'>
                             <h3>1 . היי, נעים להכיר</h3>
                         </div>
-
                         <p className="intro-text">
                             נתחיל בכמה נתונים בסיסיים כדי שנוכל לחשב את הפנסיה העתידית שלך. בכל שדה שמנו ברירת מחדל אבל רצוי לשנות את הנתונים בהתאם למצב שלך כדי שהסימולציה תהיה מדויקת כמה שיותר.
                         </p>
