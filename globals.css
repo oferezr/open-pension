@@ -26,6 +26,7 @@
   --primary-color: #9EDA82;
   --secondery-color: #376720;
   --tertiary-color: #DAFFC9;
+  --forth-color:#CEF7BB;
   --text-color: #ffffff;
   --primary-font: 'Ploni-regular';
   --primary-font-demi: 'Ploni-demi-bold';
@@ -68,12 +69,12 @@ body{
 }
 
 .backgound-tilt-grid .row{
-  height: 36px;
+  height: 25px;
   display: flex;
 }
 
 .backgound-tilt-grid > div:nth-child(even){
-  margin-right: 70.5px;
+  margin-right: 50px;
 }
 
 
@@ -120,7 +121,7 @@ h1 a{
 
 .landing-exp p {
   color: var(--text-color);
-  font-size: 18pt;
+  font-size: 18px;
   margin-bottom: 5%;
 }
 
@@ -224,7 +225,7 @@ h1 a{
 
 .header{
     font-family: var(--primary-font-ultra);
-    font-size: 32pt;
+    font-size: 32px;
     margin-top: 10px;
     margin-bottom: 24px;
     
@@ -240,7 +241,7 @@ h1 a{
     font-family: var(--primary-font);
     margin-bottom: 24px;
     margin-top: 15px;
-    font-size:24pt;
+    font-size:24px;
 }
 
 .arrow{
@@ -267,7 +268,7 @@ h1 a{
   border-radius: 16px;
   color:#000000;
   font-family: var(--primary-font);
-  font-size: 24pt;
+  font-size: 24px;
 }
 
 .wrapper input, textarea{
@@ -277,7 +278,7 @@ h1 a{
 .wrapper label {
   margin-bottom: 5px;
   font-family: var(--primary-font-demi);
-  font-size: 24pt;
+  font-size: 24px;
   display: block;
 }
 
@@ -328,7 +329,7 @@ h1 a{
 
 .subtext{
   font-family: var(--primary-font);
-  font-size: 20pt;
+  font-size: 20px;
 }
 
 .radio-container {
@@ -459,30 +460,52 @@ h1 a{
 /*Simulator output*/
 .pred-elements{
   background-color: var(--tertiary-color);
-  width: 30%;
-  padding: 0.2% 0.2% 1% 0.2%;
-  border-radius: 20px;
+  width: 13%;
+  /* padding: 0.2% 0.2% 1% 0.2%; */
+  border-radius: 15px;
   position: absolute;
   bottom: 0;
   left: 0;
   margin: 3%;
 }
-.pred-elements .inner{
-  display: flex;
-  justify-content: center;
-  background-color: var(--primary-color);
-  padding: 5% 2%;
-  border-radius: 20px;
-}
-.pred-elements .inner .elm{
-  flex: 0 0 50%;
+
+.pred-elements > div:nth-child(odd){
   text-align: center;
-  color: #ffffff;
-  font-family: var(--primary-font-bold);
-  padding-top: 3%;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  }
+.pred-elements > div:nth-child(odd) h4{
+  font-size: 25px;
 }
-.pred-elements .inner .elm h4{
+  
+.pred-elements > div:nth-child(even){
+background-color: var(--forth-color);
+border-radius: 0px 0px 15px 15px;
+display: flex;
+justify-content: right;
+padding-top: 5%;
+  padding-bottom: 5%;
+}
+.pred-elements h4, p{
   margin: 0;
+  padding: 0;
+}
+.pred-elements h4{
+  font-family: var(--primary-font-bold);
   color: var(--secondery-color);
 }
 
+.pred-elements p{
+  font-family: var(--primary-font);
+  color: var(--secondery-color);
+  margin-top: -8px;
+}
+.pred-elements > div:nth-child(even) >div:nth-child(odd){
+  flex:0 0 35%;
+  text-align: left;
+  padding-left: 5%;
+  }
+  .pred-elements > div:nth-child(even) >div:nth-child(even){
+    flex:0 0 60%;
+    text-align: right;
+    }
