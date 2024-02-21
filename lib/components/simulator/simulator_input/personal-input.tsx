@@ -11,6 +11,8 @@ export default function PersonalInput(props:any) {
   const [isMale, setIsMale] =props.is_male;
   const [isTabOpen, setIsTabOpen] = useState(false);
 
+  const currentStep = props.currentStep;
+
 
 
 
@@ -52,6 +54,7 @@ export default function PersonalInput(props:any) {
 
 
 const handleToggleTab = () => {
+    if currentStep = 1:
     setIsTabOpen(!isTabOpen); // Toggle the state when the button is clicked
     };
 
