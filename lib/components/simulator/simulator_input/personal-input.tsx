@@ -13,6 +13,8 @@ export default function PersonalInput(props:any) {
   const [numberInputSal, setNumberInputSal] = useState('');
   const [isTabOpen, setIsTabOpen] = useState(false);
 
+  const currentStep = props.currentStep;
+
 
   const handleInputChangeAge = (event: React.ChangeEvent<HTMLInputElement>) => {
     let inputValue = event.target.value;
@@ -75,6 +77,7 @@ const handleButtonClick = () => {
         
       };
 const handleToggleTab = () => {
+    if currentStep = 1:
     setIsTabOpen(!isTabOpen); // Toggle the state when the button is clicked
     };
 

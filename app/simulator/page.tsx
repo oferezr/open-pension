@@ -54,15 +54,25 @@ export default function Home() {
   
   const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, route, is_male);
   const total_savings = saving_by_by_sliders(salary, age, interest_slider, route, is_male);
+  
+  let currentStep = 1;
+    if (age && salary && is_male) {
+  currentStep = 2;      
+    } else  {
 
+    }
   return (
     <div dir='rtl'>
       
       <div className="simulator">
         <div className="right">
-          <PersonalInput age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
 
+            // if not age and not salary and not is male then show personal input
+          <PersonalInput currentStep = {currentStep} age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
+            
+            // if age and salary and is male then show rout input
           <RouteInput function={[route, setRoute]} />
+            // if route then show fund input
 
           <FundInput />
         </div>
