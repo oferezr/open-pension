@@ -149,7 +149,7 @@ const handleToggleTab = () => {
 
                     </div>
                 </div>
-                )}{!isTabOpen &&(
+                )}:{!isTabOpen &&(
                     <div className="tab-closed">
                         <div className="icon">
                             <svg width="52" height="55" viewBox="0 0 52 55" fill="none" xmlns="http://www.w3.org/2000/svg">
