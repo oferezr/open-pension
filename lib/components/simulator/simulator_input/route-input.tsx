@@ -1,5 +1,6 @@
 import {useState} from 'react';
 export default function RouteInput(props: any) {
+    const [isTabOpen, setIsTabOpen] = useState(false);
     const [route, setRoute] = props.function;
     const [tab2Clicked, setTab2Clicked] = useState(false); 
     // condition for opening tab2 for the first time
