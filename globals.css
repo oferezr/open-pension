@@ -107,7 +107,8 @@ body{
 h1 {
   color: #ffffff;
   font-family: var(--primary-font-bold);
-  margin-right: 3%;
+  margin-left: 35%;
+  text-align: left;
 }
 h1 a{
   color: #ffffff;
