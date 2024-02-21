@@ -277,6 +277,44 @@ h1 a{
     order:-1;
 } */
 
+.tab-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.tab-open{
+    order:1;
+    background-color: #DAFFC9;
+    color: #000000;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row; /* Arrange children in a row */
+    align-items: center; /* Align items vertically in the center */
+    position: relative;
+    margin: 3%;
+    padding: 3% 2%;
+
+}
+
+.tab-closed{
+    /* order:1; */
+    background-color: #DAFFC9;
+    color: #000000;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    position: relative;
+    margin: 3%;
+    padding: 3% 2%;
+    height: 32px;
+}
+
+/* .tab-closed.arrow{
+    order:-1;
+} */
+
 .simultor-input b{
   font-family: var(--primary-font-bold);
 }
@@ -630,6 +668,8 @@ h1 a{
   background-color: var(--primary-color);
   font-family: var(--primary-font);
   color: var(--secondery-color);
+}
+
   font-size: 15px;
   border-radius: 10px;
   padding: 1.5% 2%;

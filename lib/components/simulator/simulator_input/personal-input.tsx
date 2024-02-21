@@ -12,6 +12,8 @@ export default function PersonalInput(props:any) {
   const [isTabOpen, setIsTabOpen] = useState(false);
 
 
+
+
   const handleInputChangeAge = (event: React.ChangeEvent<HTMLInputElement>) => {
     let inputValue = event.target.value;
     // Validate input: allow only numbers
