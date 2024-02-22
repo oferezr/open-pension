@@ -9,8 +9,6 @@ export default function PersonalInput(props:any) {
   const [age, setAge] = props.age;
   const [salary, setSalary] = props.salary;
   const [isMale, setIsMale] =props.is_male;
-  const [numberInputAge, setNumberInputAge] = useState('');
-  const [numberInputSal, setNumberInputSal] = useState('');
   const [isTabOpen, setIsTabOpen] = useState(false);
 
 
@@ -49,31 +47,8 @@ export default function PersonalInput(props:any) {
     // sets isMale to true if value is equal to 67.
     setIsMale(event.target.value === "67");
   };
-  interface UserValDict {
-    numberInputSal:  number;
-    numberInputAge: number;
-    isMale: boolean;
-}
 
-const handleButtonClick = () => {
-    // converts vals on pass to simulator from string to number. not working according to interface. 
-    // TODO fix it so var userValDict is worling acoorsing to the interface UserValDict.
-    // TODO export UserValDict interface.
-        var userValDict =   {numberInputSal:  numberInputSal,
-                            numberInputAge: numberInputAge,
-                            isMale: isMale};
-        if(window && window.sessionStorage){
 
-            sessionStorage.setItem('userValDict', JSON.stringify(userValDict));
-
-        window.location.href = "/simulator";
-        // navigate('/simulator', { state: { numberInputSal:  numberInputSal,
-        //                                   numberInputAge: numberInputAge,
-        //                                   selectedRetirementValue: selectedRetirementValue} });
-        }
-                        
-        
-      };
 const handleToggleTab = () => {
     setIsTabOpen(!isTabOpen); // Toggle the state when the button is clicked
     };

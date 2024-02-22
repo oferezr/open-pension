@@ -416,7 +416,13 @@ h1 a{
 }
 
 .radio-container input[type="radio"] {
-    display: none; /* Hide the default radio button */
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-container input:checked ~.checkmark{
+  background-color: var(--secondery-color);
 }
 
 .gender{
@@ -424,11 +430,6 @@ h1 a{
     font-family: var(--primary-font);
 }
 
-/* Hide the default radio input */
-.radio-container input {
-  position: absolute;
-  opacity: 0;
-}
 
 /* Style the custom radio selector */
 .checkmark {
