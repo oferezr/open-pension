@@ -28,12 +28,19 @@ import 'swiper/css/scrollbar';
     </defs>
     </svg>
 </div>
-export default function FundInput() {
+export default function FundInput(props:any) {
 
     const [isTabOpen, setIsTabOpen] = useState(false);
+    const currentStep = props.currentStep;
 
     const handleToggleTab = () => {
-        setIsTabOpen(!isTabOpen); // Toggle the state when the button is clicked
+        if (currentStep == 3){
+            setIsTabOpen(isTabOpen);
+        }
+        else {
+            setIsTabOpen(false);
+        }
+        
         };
 
     return (

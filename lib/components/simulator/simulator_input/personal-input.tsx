@@ -12,6 +12,7 @@ export default function PersonalInput(props:any) {
   const [numberInputAge, setNumberInputAge] = useState('');
   const [numberInputSal, setNumberInputSal] = useState('');
   const [isTabOpen, setIsTabOpen] = useState(false);
+  const [tab1, setTab1] = props.tab1;
 
   const currentStep = props.currentStep;
 
@@ -42,9 +43,9 @@ export default function PersonalInput(props:any) {
       inputValue = numericValue.toString(); // Convert back to string for input value
     }
     setSalary(numericInput);
+        setTab1(true); // move to handleRadioChange when guy fixes the bug
 
   }
-
   
 
   const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -76,10 +77,25 @@ const handleButtonClick = () => {
                         
         
       };
+// const handleToggleTab = () => {
+
+//     if (currentStep == 1){
+//         setIsTabOpen(!isTabOpen);
+//     }
+//     else {
+//         setIsTabOpen(false);
+//     }
+    
+//     };
+
 const handleToggleTab = () => {
-    if currentStep = 1:
-    setIsTabOpen(!isTabOpen); // Toggle the state when the button is clicked
+        setIsTabOpen(!isTabOpen);
     };
+
+
+    console.log("personal")
+    console.log(currentStep);
+    console.log(isTabOpen);
 
   return (
 <div className={`simulator-input ${isTabOpen ? 'tab-open' : 'tab-closed'}`}>
@@ -106,7 +122,7 @@ const handleToggleTab = () => {
                     </div>   
                     <div className='main-content'>
                         <div className='header'>
-                            <h3>1 . היי, נעים להכיר</h3>
+                            <h3> {currentStep} 1 . היי, נעים להכיר</h3>
                         </div>
                         <p className="intro-text">
                             נתחיל בכמה נתונים בסיסיים כדי שנוכל לחשב את הפנסיה העתידית שלך. בכל שדה שמנו ברירת מחדל אבל רצוי לשנות את הנתונים בהתאם למצב שלך כדי שהסימולציה תהיה מדויקת כמה שיותר.
