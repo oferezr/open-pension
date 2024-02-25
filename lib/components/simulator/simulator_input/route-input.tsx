@@ -1,6 +1,9 @@
 import {useState} from 'react';
 export default function RouteInput(props: any) {
     const [isTabOpen, setIsTabOpen] = useState(false);
+    // const currentStep = props.currentStep;
+    const [tab1, setTab1] = props.tab1;
+    const [tab2, setTab2] = props.tab2;
     const [route, setRoute] = props.function;
     const primaryColor = "#9EDA82";
     const seconderyColor = "#376720";
@@ -22,14 +25,31 @@ export default function RouteInput(props: any) {
         hover.style.visibility = "hidden";
     }
 
+    // const handleToggleTab = () => {
+    //     if (currentStep == 2){
+    //         setIsTabOpen(isTabOpen);
+    //     }
+    //     else {
+    //         setIsTabOpen(false);
+    //     }
+        
+    //     };
+
     const handleToggleTab = () => {
-        setIsTabOpen(!isTabOpen); // Toggle the state when the button is clicked
-        };
+        setIsTabOpen(!isTabOpen);
+    };
+    var color = null;
+    if (tab1){
+       color = "#000000";
+    }
+    else{
+        color = "#ffffff";
+    }
 
 
 
     return (
-    <div className={`simulator-input ${isTabOpen ? 'tab-open' : 'tab-closed'}`}>
+    <div className={`simulator-input ${isTabOpen ? 'tab-open' : 'tab-closed'}`}  style={{backgroundColor: color}}>
         <div className='tab-container'>
             <button className="arrow" onClick={handleToggleTab}>
                 {isTabOpen ? <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">

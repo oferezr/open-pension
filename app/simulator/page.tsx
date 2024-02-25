@@ -55,24 +55,30 @@ export default function Home() {
   const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, route, is_male);
   const total_savings = saving_by_by_sliders(salary, age, interest_slider, route, is_male);
   
-  let currentStep = 1;
-    if (age && salary && is_male) {
-  currentStep = 2;      
-    } else  {
+  const [tab1, setTab1] = useState(false);
+  const [tab2, setTab2] = useState(false);
+  const [tab3, setTab3] = useState(false);
 
-    }
+//   let currentStep = 1;
+//     if (is_male){  // user filled the personal details
+//         currentStep = 2;   // change the state to second tab   
+//     } else if((currentStep == 2)) {
+//         currentStep = 3;
+//     }
+
+
   return (
     <div dir='rtl'>
       
       <div className="simulator">
         <div className="right">
 
-            // if not age and not salary and not is male then show personal input
-          <PersonalInput currentStep = {currentStep} age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
+            {/* // if not age and not salary and not is male then show personal input */}
+          <PersonalInput tab1 = {[tab1, setTab1]} age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
             
-            // if age and salary and is male then show rout input
-          <RouteInput function={[route, setRoute]} />
-            // if route then show fund input
+            {/* // if age and salary and is male then show rout input */}
+          <RouteInput tab1 = {[tab1, setTab1]} tab2 = {[tab2, setTab2]} function={[route, setRoute]} />
+            {/* // if route then show fund input */}
 
           <FundInput />
         </div>
