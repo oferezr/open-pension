@@ -51,6 +51,7 @@ export default function Home() {
       mod5.style.display = "block";
     }
   }
+
   const [tab1Filled, setTab1Filled] = useState(false);
   const [tab2Filled, setTab2Filled] = useState(false);
   const [tab3Filled, setTab3Filled] = useState(false);
@@ -64,9 +65,8 @@ export default function Home() {
 
   return (
     <div dir='rtl'>
-
       <div className="simulator">
-      <div className="right">
+        <div className="right">
                 <PersonalInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
                 <RouteInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} tab2Filled = {[tab2Filled, setTab2Filled]} function={[route, setRoute]} />
                 <FundInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} tab2Filled = {[tab2Filled, setTab2Filled]} tab3Filled = {[tab3Filled, setTab3Filled]}/>

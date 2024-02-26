@@ -590,3 +590,91 @@ h1 a{
       flex:0 0 60%;
       text-align: right;
       }
+
+/*Modals*/
+/*Welcome modal*/
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  
+  }
+  .modal-content {
+    background-color: var(--secondery-color);
+    color: var(--forth-color);
+    margin: auto;
+    padding: 20px 30px;
+    width: 40%;
+    border-radius: 20px;
+    padding-bottom: 80px;
+    font-family: var(--primary-font);
+  }
+  .modal-content h2{
+    font-family: var(--primary-font-demi);
+  }
+  .modal-content h3{
+    font-family: var(--primary-font-bold);
+  }
+  .modal-content button{
+    margin-top: 10px;;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--primary-color);
+    border: none;
+    float: left;
+  }
+  .modal-content a{
+    background-color: var(--primary-color);
+    font-family: var(--primary-font);
+    color: var(--secondery-color);
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 1.5% 2%;
+    text-decoration: none;
+    float: left;
+  }
+  .modal-content button:hover{
+    background-color: var(--forth-color);
+  }
+  #first-modal, #impact-modal, #dogri-modal, #eys-modal{
+    display: none;
+  }
+  .modal-content .split-containter{
+    display: flex;
+    justify-content: right;
+  }
+  .modal-content .split-containter>svg{
+    margin: 2%;
+  }
+  .modal-content .split-containter>div{
+    margin: 2%;
+  }
+  #welcome-modal{
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+    padding-top: 20%; /* Location of the box */
+  }
+  #first-modal{
+    padding-top: 5%; 
+    width: 60%;
+    left: 20%;
+  }
+  #impact-modal{
+    padding-top: 8%;
+    width: 60%;
+    left: 12%;
+  }
+  #dogri-modal{
+    width: 60%;
+    padding-top: 37%;
+  }
+  #eys-modal{
+    width: 60%;
+    padding-top: 32%;
+  }
