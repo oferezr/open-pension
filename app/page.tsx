@@ -51,9 +51,14 @@ export default function Home() {
       mod5.style.display = "block";
     }
   }
+
   const [tab1Filled, setTab1Filled] = useState(false);
   const [tab2Filled, setTab2Filled] = useState(false);
   const [tab3Filled, setTab3Filled] = useState(false);
+
+  const [isTab1Open, setIsTab1Open] = useState(false);
+  const [isTab2Open, setIsTab2Open] = useState(false);
+  const [isTab3Open, setIsTab3Open] = useState(false);
 
 
   const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, route, is_male);
@@ -63,12 +68,10 @@ export default function Home() {
     <div dir='rtl'>
       <div className="simulator">
         <div className="right">
-          <PersonalInput age={[age, setAge]} salary={[salary, setSalary]} is_male={[is_male, setIsMale]} />
-
-          <RouteInput function={[route, setRoute]} />
-
-          <FundInput />
-        </div>
+                <PersonalInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
+                <RouteInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} tab2Filled = {[tab2Filled, setTab2Filled]} function={[route, setRoute]} />
+                <FundInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} tab2Filled = {[tab2Filled, setTab2Filled]} tab3Filled = {[tab3Filled, setTab3Filled]}/>
+            </div>
         <div className="left">
           <h1><a href="http://localhost:3000/">פנסיה פתוחה</a></h1>
           <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} />
