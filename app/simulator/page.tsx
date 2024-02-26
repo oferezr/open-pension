@@ -66,11 +66,8 @@ export default function Home() {
     <div dir='rtl'>    
         <div className="simulator">
             <div className="right">
-                {/* // if not age and not salary and not is male then show personal input */}
                 <PersonalInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
-                    {/* // if age and salary and is male then show rout input */}
                 <RouteInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} tab2Filled = {[tab2Filled, setTab2Filled]} function={[route, setRoute]} />
-                    {/* // if route then show fund input */}
                 <FundInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} tab2Filled = {[tab2Filled, setTab2Filled]} tab3Filled = {[tab3Filled, setTab3Filled]}/>
             </div>
             <div className="left">
