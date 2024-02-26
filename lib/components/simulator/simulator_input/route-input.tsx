@@ -31,16 +31,6 @@ export default function RouteInput(props: any) {
         hover.style.visibility = "hidden";
     }
 
-    // const handleToggleTab = () => {
-    //     if (currentStep == 2){
-    //         setIsTabOpen(isTabOpen);
-    //     }
-    //     else {
-    //         setIsTabOpen(false);
-    //     }
-        
-    //     };
-
     const handleToggleTab = () => {
     if (tab1Filled == true){
         setIsTab2Open(!isTab2Open);
