@@ -4,6 +4,7 @@ export default function SimulatorOutput(props: any) {
     const income = props.monthly;
     const total = props.savings;
     const borad = props.borad
+    console.log(props)
     const grid_columns = [1, 2, 3, 4, 5, 6, 7, 8];
     const grid_rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     return (
