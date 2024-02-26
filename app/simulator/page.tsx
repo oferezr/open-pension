@@ -46,8 +46,8 @@ function get_board(route:number):number[][]{
 export default function Home() {
   const [route, setRoute] = useState(0.5);
   const [age, setAge] = useState(20);
-    const [salary, setSalary] = useState(6800);
-    const [is_male, setIsMale] = useState(true);
+  const [salary, setSalary] = useState(6800);
+  const [is_male, setIsMale] = useState(true);
   const interest_slider = 0.5;
   const borad = get_board(route);
   
@@ -55,9 +55,14 @@ export default function Home() {
   const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, route, is_male);
   const total_savings = saving_by_by_sliders(salary, age, interest_slider, route, is_male);
   
-  const [tab1, setTab1] = useState(false);
-  const [tab2, setTab2] = useState(false);
-  const [tab3, setTab3] = useState(false);
+  const [tab1Filled, setTab1Filled] = useState(false);
+  const [tab2Filled, setTab2Filled] = useState(false);
+  const [tab3Filled, setTab3Filled] = useState(false);
+
+  const [isTab1Open, setIsTab1Open] = useState(false);
+  const [isTab2Open, setIsTab2Open] = useState(false);
+  const [isTab3Open, setIsTab3Open] = useState(false);
+
 
 //   let currentStep = 1;
 //     if (is_male){  // user filled the personal details
@@ -68,26 +73,40 @@ export default function Home() {
 
 
   return (
-    <div dir='rtl'>
-      
-      <div className="simulator">
-        <div className="right">
-
-            {/* // if not age and not salary and not is male then show personal input */}
-          <PersonalInput tab1 = {[tab1, setTab1]} age = {[age, setAge]} salary = {[salary, setSalary]} is_male = {[is_male, setIsMale]}/>
-            
-            {/* // if age and salary and is male then show rout input */}
-          <RouteInput tab1 = {[tab1, setTab1]} tab2 = {[tab2, setTab2]} function={[route, setRoute]} />
-            {/* // if route then show fund input */}
-
-          <FundInput />
+    <div dir='rtl'>    
+        <div className="simulator">
+            <div className="right">
+                {/* // if not age and not salary and not is male then show personal input */}
+                <PersonalInput 
+                    tab1Open = {[isTab1Open, setIsTab1Open]}
+                    tab2Open = {[isTab2Open, setIsTab2Open]}
+                    tab3Open = {[isTab3Open, setIsTab3Open]}
+                    tab1Filled = {[tab1Filled, setTab1Filled]} 
+                    age = {[age, setAge]} 
+                    salary = {[salary, setSalary]} 
+                    is_male = {[is_male, setIsMale]}/>
+                    {/* // if age and salary and is male then show rout input */}
+                <RouteInput 
+                    tab1Open = {[isTab1Open, setIsTab1Open]}
+                    tab2Open = {[isTab2Open, setIsTab2Open]}
+                    tab3Open = {[isTab3Open, setIsTab3Open]}
+                    tab1Filled = {[tab1Filled, setTab1Filled]} 
+                    tab2Filled = {[tab2Filled, setTab2Filled]} 
+                    function={[route, setRoute]} />
+                    {/* // if route then show fund input */}
+                <FundInput 
+                    tab1Open = {[isTab1Open, setIsTab1Open]}
+                    tab2Open = {[isTab2Open, setIsTab2Open]}
+                    tab3Open = {[isTab3Open, setIsTab3Open]}
+                    tab1Filled = {[tab1Filled, setTab1Filled]} 
+                    tab2Filled = {[tab2Filled, setTab2Filled]} 
+                    tab3Filled = {[tab3Filled, setTab3Filled]}/>
+            </div>
+            <div className="left">
+                <h1><a href="http://localhost:3000/">פנסיה פתוחה</a></h1>
+                <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad}/>
+            </div>
         </div>
-        <div className="left">
-        <h1><a href="http://localhost:3000/">פנסיה פתוחה</a></h1>
-          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad}/>
-        </div>
-      </div>
-
       {/* <Comparsion/> */}
     </div>
   )

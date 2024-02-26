@@ -1,19 +1,25 @@
 import {useState} from 'react';
 export default function RouteInput(props: any) {
-    const [isTabOpen, setIsTabOpen] = useState(false);
-    // const currentStep = props.currentStep;
-    const [tab1, setTab1] = props.tab1;
-    const [tab2, setTab2] = props.tab2;
     const [route, setRoute] = props.function;
+    const [tab2Clicked, setTab2Clicked] = useState(false); 
+    // condition for opening tab2 for the first time
+    const [tab1Filled, setTab1Filled] = props.tab1Filled;
+    const [tab2Filled, setTab2Filled] = props.tab2Filled;
+    // condition for closing other tabs when this opens
+    const [isTab1Open, setIsTab1Open] = props.tab1Open;
+    const [isTab2Open, setIsTab2Open] = props.tab2Open;
+    const [isTab3Open, setIsTab3Open] = props.tab3Open;
+
     const primaryColor = "#9EDA82";
     const seconderyColor = "#376720";
+
     function change_value() {
         var slider = (document.getElementById("route_slider") as HTMLInputElement);
         setRoute(slider?.value);
         const sliderVal = parseFloat(slider?.value);
         const progress = (sliderVal / 1) * 100;
         slider.style.background = `linear-gradient(to left, ${seconderyColor} ${progress}%, ${primaryColor} ${progress}%)`;
-
+        setTab2Filled(true);
     }
     function hover_show() {
         const hover = (document.getElementById("hover") as HTMLInputElement);
@@ -25,34 +31,21 @@ export default function RouteInput(props: any) {
         hover.style.visibility = "hidden";
     }
 
-    // const handleToggleTab = () => {
-    //     if (currentStep == 2){
-    //         setIsTabOpen(isTabOpen);
-    //     }
-    //     else {
-    //         setIsTabOpen(false);
-    //     }
-        
-    //     };
-
     const handleToggleTab = () => {
-        setIsTabOpen(!isTabOpen);
+    if (tab1Filled == true){
+        setIsTab2Open(!isTab2Open);
+        setTab2Clicked(true); 
+        setIsTab1Open(false); // close other tabs when this tab is opened
+        setIsTab3Open(false); // close other tabs when this tab is opened
+        }
     };
-    var color = null;
-    if (tab1){
-       color = "#000000";
-    }
-    else{
-        color = "#ffffff";
-    }
-
 
 
     return (
-    <div className={`simulator-input ${isTabOpen ? 'tab-open' : 'tab-closed'}`}  style={{backgroundColor: color}}>
+        <div className={`simulator-input ${isTab2Open ? 'tab-open' : 'tab-closed'}`} style={!tab2Clicked ? { opacity: 0.5 } : undefined}>
         <div className='tab-container'>
-            <button className="arrow" onClick={handleToggleTab}>
-                {isTabOpen ? <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button className="arrow" onClick={handleToggleTab} disabled={!tab1Filled}>
+                {isTab2Open ? <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.5198 14.6186C14.7205 15.7038 13.0986 15.7038 12.2993 14.6186L4.21033 3.63746C3.23758 2.3169 4.18046 0.451303 5.82062 0.451303L21.9985 0.451305C23.6387 0.451305 24.5815 2.31691 23.6088 3.63747L15.5198 14.6186Z" fill="#376720"/>
                 </svg>
                 : <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +53,7 @@ export default function RouteInput(props: any) {
                 </svg>            
                 }
             </button>
-            {isTabOpen &&(
+            {isTab2Open &&(
             <div className='tab-open'>
                 <div className="icon">
                     <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +115,7 @@ export default function RouteInput(props: any) {
 
                 </div>
             </div>
-            )}{!isTabOpen &&(
+            )}{!isTab2Open &&(
                 <div className="tab-closed">
                     <div className="icon">
                         <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
