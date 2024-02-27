@@ -703,3 +703,8 @@ h1 a{
     left: 16%;
     width: 25%;
   }
+
+  /*Fund Slider*/
+  .fund-slider{
+    width: 700px;
+  }
