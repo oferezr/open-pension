@@ -416,7 +416,13 @@ h1 a{
 }
 
 .radio-container input[type="radio"] {
-    display: none; /* Hide the default radio button */
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-container input:checked ~.checkmark{
+  background-color: var(--secondery-color);
 }
 
 .gender{
