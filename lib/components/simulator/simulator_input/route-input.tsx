@@ -4,7 +4,6 @@ export default function RouteInput(props: any) {
     // const currentStep = props.currentStep;
 
     const [route, setRoute] = props.function;
-    const [tab2Clicked, setTab2Clicked] = useState(false);
     // condition for opening tab2 for the first time
     const [tab1Filled, setTab1Filled] = props.tab1Filled;
     const [tab2Filled, setTab2Filled] = props.tab2Filled;
@@ -47,7 +46,6 @@ export default function RouteInput(props: any) {
     const handleToggleTab = () => {
         if (tab1Filled == true) {
             setIsTab2Open(!isTab2Open);
-            setTab2Clicked(true);
             setIsTab1Open(false); // close other tabs when this tab is opened
             setIsTab3Open(false); // close other tabs when this tab is opened
         }
@@ -55,7 +53,7 @@ export default function RouteInput(props: any) {
 
 
     return (
-        <div className={`simulator-input ${isTab2Open ? 'tab-open' : 'tab-closed'}`} style={!tab2Clicked ? { opacity: 0.5 } : undefined}>
+        <div className={`simulator-input ${isTab2Open ? 'tab-open' : 'tab-closed'}`} style={!tab1Filled ? { opacity: 0.5 } : undefined}>
             <div className='tab-container'>
                 <button className="arrow" onClick={handleToggleTab} disabled={!tab1Filled}>
                     {isTab2Open ? <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -69,12 +69,14 @@ export default function Home() {
   const interest_slider = 0.5;
   const [board_state, setBorardState] = useState(false);
   const borad = get_board(board_state);
+  
   function step(n: number) {
     var mod1 = (document.getElementById("welcome-modal") as HTMLInputElement);
     var mod2 = (document.getElementById("first-modal") as HTMLInputElement);
     var mod3 = (document.getElementById("impact-modal") as HTMLInputElement);
     var mod4 = (document.getElementById("dogri-modal") as HTMLInputElement);
     var mod5 = (document.getElementById("eys-modal") as HTMLInputElement);
+    
     const header_h1 = (document.getElementsByTagName("h1") as HTMLCollectionOf<HTMLElement>);
     const pred_elements = (document.getElementsByClassName("elm") as HTMLCollectionOf<HTMLElement>);
     const tiles = (document.getElementsByClassName("output-tiles") as HTMLCollectionOf<HTMLElement>);
@@ -122,13 +124,13 @@ export default function Home() {
   return (
     <div dir='rtl'>
       <div className="simulator">
-        <div className="right">
+        <div className="right" style={{opacity:0.5}}>
           <PersonalInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} age={[age, setAge]} salary={[salary, setSalary]} is_male={[is_male, setIsMale]} />
           <RouteInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} function={[route, setRoute]} />
           <FundInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} tab3Filled={[tab3Filled, setTab3Filled]} />
         </div>
         <div className="left">
-          <h1><a href="http://localhost:3000/">פנסיה פתוחה</a></h1>
+          <h1><a href="/.">פנסיה פתוחה</a></h1>
           <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} />
         </div>
       </div>
