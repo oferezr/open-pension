@@ -71,7 +71,7 @@ export default function Home() {
                 <FundInput tab1Open = {[isTab1Open, setIsTab1Open]} tab2Open = {[isTab2Open, setIsTab2Open]} tab3Open = {[isTab3Open, setIsTab3Open]} tab1Filled = {[tab1Filled, setTab1Filled]} tab2Filled = {[tab2Filled, setTab2Filled]} tab3Filled = {[tab3Filled, setTab3Filled]}/>
             </div>
             <div className="left">
-                <h1><a href="http://localhost:3000/">פנסיה פתוחה</a></h1>
+                <h1><a href="/.">פנסיה פתוחה</a></h1>
                 <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad}/>
             </div>
         </div>

@@ -187,16 +187,20 @@ h1 a{
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -100;
-  width: 80%;
+  z-index: 1;
+  width: 67%;
+  margin-right: 16.5%;
 }
 .slider-container .slider-background div{
   width: 2px;
-  background-color: var(--secondery-color);
+  /* background-color: var(--secondery-color); */
   height: 15px;
-  margin-right: 24%;
-  margin-top: 13px;
+  margin-right: 19.3%;
+  margin-top: 35px;
   display: inline-block;
+}
+.slider-container .slider-background div:first-child{
+  margin-right: 0;
 }
 
 #route_slider{
@@ -204,6 +208,7 @@ h1 a{
   flex:0 0 70%;
   width: 100%;
   background-color: #132814;
+  z-index: 10;
 }
 
 .slider-container .item {
@@ -221,6 +226,8 @@ h1 a{
 }
 .simulator .right{
   flex: 0 0 55%;
+  padding-top: 1%;
+  padding-right: 1%;
 }
 .simulator .left{
   flex: 0 0 60%;
@@ -240,10 +247,9 @@ h1 a{
 }
 
 .tab-container {
-    display: flex;
-    align-items: center;
-
+    width: 100%;
 }
+
 
 .tab-open{
     order:1;
@@ -254,40 +260,24 @@ h1 a{
     flex-direction: row; /* Arrange children in a row */
     align-items: center; /* Align items vertically in the center */
     position: relative;
-    margin: 3%;
-    padding: 3% 2%;
-
+    margin: 1%;
 }
 
 .tab-closed{
-    /* order:1; */
     background-color: #DAFFC9;
     color: #000000;
     border-radius: 16px;
     display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    position: relative;
-    margin: 3%;
-    padding: 3% 2%;
-    height: 32px;
+    justify-content: right;
+    margin: 1%;
+    cursor: pointer;
 }
 
-/* .tab-closed.arrow{
-    order:-1;
-} */
 
 .simultor-input b{
   font-family: var(--primary-font-bold);
 }
 
-
-/* .simultor-input label {
-  display: inline-block; 
-  margin-bottom: 10px;
-  direction: rtl;
-  text-align: right;
-} */
 
 .simultor-input input[type="checkbox"] {
   position: absolute;
@@ -299,15 +289,19 @@ h1 a{
 .icon{
     align-self: flex-start;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .header{
-    order:1;
     font-family: var(--primary-font-ultra);
-    font-size: 32px;
-    margin-top: 10px;
-    margin-bottom: 24px;
-    
+    font-size: 24px;
+    margin: 0;
+    cursor: pointer;
+}
+.header h3{
+  margin-top: 10px;
+  margin-bottom: 0;
+
 }
 
 .main-content{
@@ -324,15 +318,16 @@ h1 a{
 }
 
 .arrow{
-    order: 2;
-    align-self: flex-start;
+    float: left;
     background-size: contain; 
     background-repeat: no-repeat;
     width: 50px; 
     height: 50px;
     cursor: pointer;
-    background-color: #DAFFC9;
+    background-color: transparent;
     border: none;
+    margin-left: 1%;
+    margin-top: 1%;
 }
 
 .wrapper {
@@ -346,11 +341,11 @@ h1 a{
   border-radius: 16px;
   color:#000000;
   font-family: var(--primary-font);
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .wrapper input, textarea{
-    padding: 10px;
+    padding: 5px 10px;
 }
 
 .wrapper label {
