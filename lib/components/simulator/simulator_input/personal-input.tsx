@@ -100,7 +100,8 @@ export default function PersonalInput(props:any) {
                             <div className="salary">
                                 <label htmlFor="numberInputSal">שכר</label>
                                 <input type="text" id="numberInputSal" name="numberInput" value={salary} onChange={handleInputChangeSal} />
-                                <p className='subtext'>בכל חודש מופרש על ידך ועל ידי המעסיק שלך אחוז מסוים מהשכר. הפרשה זו נקראת ״הפקדה״ והיא מרכיב קריטי כדי לחשב את הפנסיה העתידית שלך.</p>
+                                <p className='subtext'>בכל חודש מופרש לחיסכון על ידך ועל ידי המעסיק שלך אחוז מסוים מהשכר. (הפקדה)</p>
+                            </div>
                             </div>
                             <div className="retire-age">
                                 <label>צפי לגיל פרישה</label>
@@ -122,7 +123,7 @@ export default function PersonalInput(props:any) {
                                     <p className='subtext'>לפי החוק הישראלי נשים זכאיות לפרוש לפנסיה בגיל 65 וגברים בגיל 67.</p>
                                 </div>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
                 )}{!isTab1Open &&(

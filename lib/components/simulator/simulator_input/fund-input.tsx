@@ -111,11 +111,12 @@ export default function FundInput(props:any) {
                                 בשוק ההון ובדרכים נוספות כדי להשיג רווחים שיגדילו את החיסכון שלנו.
                             </p>
                             <p>
+                                <br/>
                                 ההחלטה איפה תנוהל הפנסיה היא אחת ההחלטות החשובות שנעשה
                                 <br/>
                                 במישור הכלכלי והיא משפיעה על גובה הקצבה שנקבל ביום בו נפרוש.
                             </p>
-                            <b>בחר קרן פניסה: </b>
+                            <label>בחר קרן פנסיה: </label>
                         </div>
                         <div className="fund-slider">
                         <Swiper
@@ -125,7 +126,6 @@ export default function FundInput(props:any) {
                         slidesPerView={3}
                         navigation
                         >
-                        
                             <SwiperSlide key = 'one'>
                                 <div className="icon">
                                     <svg width="154" height="103" viewBox="0 0 154 103" fill="none" xmlns="http://www.w3.org/2000/svg">

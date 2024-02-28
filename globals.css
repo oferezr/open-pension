@@ -126,9 +126,9 @@ h1 a{
   /* background-repeat: no-repeat; */
   background-color: var(--secondery-color);
   border-radius: 10px;
-  width: 65%;
+  width: 50%;
   /* height: ; */
-  font-size: 16px;
+  font-size: 20px;
   position: absolute;
   z-index: 1;
   color: var(--forth-color);
@@ -308,7 +308,16 @@ h1 a{
     flex:1;
     font-family: var(--primary-font);
     margin-left: 44px;
+    font-size: 24px;
 }
+
+.main-content label{
+    flex:1;
+    font-family: var(--primary-font-demi);
+    /* margin-left: 44px; */
+    font-size: 24px;
+}
+
 
 .intro-text{
     font-family: var(--primary-font);
@@ -332,7 +341,7 @@ h1 a{
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .wrapper input {
@@ -350,11 +359,13 @@ h1 a{
 
 .wrapper label {
   margin-bottom: 5px;
-  font-family: var(--primary-font-demi);
-  font-size: 24px;
   display: block;
 }
 
+.cur-age,
+.salary{
+    width: 50%;
+}
 
 .next-page{
   background-image: url('/open-pension/images/arrow.svg');
