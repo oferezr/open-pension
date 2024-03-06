@@ -32,6 +32,7 @@
   --secondery-color: #376720;
   --tertiary-color: #DAFFC9;
   --forth-color:#CEF7BB;
+  --fifth-color:#BCECA5;
   --text-color: #ffffff;
   --primary-font: 'Ploni-regular';
   --primary-font-med: 'Ploni-medium';
@@ -835,3 +836,187 @@ h1 a{
   .fund-slider{
     width: 700px;
   }
+
+
+  /*Comparison Tab*/
+  .comparison-tab{
+    width: 13%;
+    background-color: var(--forth-color);
+    margin: 3%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    font-family: var(--primary-font);
+    display: flex;
+    color: #fff;
+  }
+
+   .comparison-tab button{
+    /* border-radius: 10px; */
+    /* padding: 8px; */
+    border-style:solid;
+    border: none;
+    font-family: var(--primary-font);
+    font-size: 18px;
+  }
+  .comparison-tab>button:nth-child(odd){
+    color: #fff;
+    flex: 0 0 85%;
+    padding: 2% 0;
+    border-color: var(--secondery-color);
+    background-color: var(--secondery-color);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .comparison-tab>button:nth-child(odd):hover{
+    color: var(--secondery-color);
+    background-color: var(--primary-color);
+  }
+  .comparison-tab>button:nth-child(even){
+    flex: 0 0 15%;
+    background-color: var(--forth-color);
+    color: var(--secondery-color);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .comparison-tab>button:nth-child(even):hover{
+    color: var(--secondery-color);
+    background-color: var(--primary-color);
+  }
+.comparison-tab span{
+  position: absolute;
+font-size:14px;
+background-color:#fff;
+font-family: var(--primary-font-demi);
+width:30px;
+height:25px;
+padding-top: 5px;
+text-align: center;
+left: 95%;
+bottom: 40%;
+border-radius: 50%;
+color:var(--secondery-color);
+
+}
+#compare-modal{
+  display: none;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+  z-index: 100;
+}
+#compare-modal .modal-content{
+  background-color: var(--forth-color);
+  width: 70%;
+  color: var(--secondery-color);
+  margin-top:5%;
+}
+#compare-modal .modal-content>button{
+  float: left;
+  background-color: transparent;
+  border: none;
+}
+#compare-modal .buttons{
+  text-align: center;
+}
+#compare-modal .buttons button{
+  background-color: transparent;
+  font-family: var(--primary-font-demi);
+  padding: 0.7% 1.3%;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin:1%;
+  border-style: solid;
+  border-color: var(--secondery-color);
+}
+#compare-modal .buttons button:nth-child(odd){
+  background-color: var(--secondery-color);
+  color: #fff;
+}
+#compare-modal .buttons button:nth-child(odd):hover{
+  background-color: var(--primary-color);
+  color: var(--secondery-color);
+}
+#compare-modal .buttons button:nth-child(even){
+  background-color: transparent;
+  color: var(--secondery-color);
+}
+#compare-modal .buttons button:nth-child(even):hover{
+  background-color: var(--primary-color);
+}
+.compare-containter{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.compare-item{
+  flex: 0 0 15%;
+  text-align: center;
+}
+.compare-item-elem:first-child{
+  height: 80px;
+}
+.compare-item-elem{
+  background-color: var(--primary-color);
+  margin: 5% 1%;
+  padding: 10%;
+  height: 60px;
+  text-align: center;
+}
+.compare-item button{
+  background: transparent;
+  border-color: var(--secondery-color);
+  color: var(--secondery-color);
+  font-family: var(--primary-font-demi);
+  padding: 2% 6%;
+  border-radius: 10px;
+}
+.compare-item button:hover{
+  background-color: var(--primary-color);
+}
+.compare-item-elem h3{
+  font-family: var(--primary-font-demi);
+  margin: 0;
+}
+.compare-item-elem h2{
+  font-family: var(--primary-font-demi);
+  font-size: 28px;
+  margin: 0;
+}
+.compare-item-elem label{
+  background-color: var(--forth-color);
+  padding: 5%;
+  border-radius: 10px;
+}
+.compare-item:first-child .compare-item-elem{
+  background-color: var(--fifth-color);
+  text-align: center;
+  padding: 10%;
+  height: 60px;
+}
+.compare-item:first-child .compare-item-elem:first-child{
+  height: 80px;
+}
+
+.compare-no-data{
+  text-align: center;
+}
+.compare-no-data svg{
+  margin-right: 5%;
+}
+#compare-tooltip{
+  background-color: var(--secondery-color);
+  border-radius: 20px;
+  padding: 1%;
+  color: #fff;
+  font-family: var(--primary-font);
+  width: 20%;
+  position: absolute;
+  bottom: 6%;
+  left: 18%;
+}
+#compare-tooltip h3{
+  margin: 0;
+  font-family: var(--primary-font-demi);
+}

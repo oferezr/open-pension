@@ -6,6 +6,7 @@ import RouteInput from "@/lib/components/simulator/simulator_input/route-input";
 import SimulatorOutput from "@/lib/components/simulator/simulator_output/simulator_output";
 import { monthly_income_by_by_sliders, saving_by_by_sliders } from "@/lib/utils/client";
 import { useState } from "react";
+import { CompareSave } from "./simulator/page";
 
 function get_board(state: boolean): number[][] {
   const board = [[0, 0, 0, 0], [0, 1, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]]
@@ -73,6 +74,7 @@ export default function Home() {
   const [is_male, setIsMale] = useState(true);
   const interest_slider = 0.5;
   const [board_state, setBorardState] = useState(false);
+  const [compare_list, setCompareList] = useState<CompareSave[]>([]);
   const borad = get_board(board_state);
   
   const [tab1Clicked, setTab1Clicked] = useState(false);
@@ -169,7 +171,7 @@ export default function Home() {
         </div>
         <div className="left">
           <h1><a href="/.">פנסיה פתוחה</a></h1>
-          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} />
+          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} filled = {[tab2Filled, setTab2Filled]} compare_list={[compare_list, setCompareList]}/>
         </div>
       </div>
 

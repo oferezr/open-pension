@@ -1,12 +1,16 @@
 import { Tile } from "../../tile";
+import ComparisonTab from "../comparsion-tab";
 
 export default function SimulatorOutput(props: any) {
     const income = props.monthly;
     const total = props.savings;
     const borad = props.borad
-    console.log(props)
+    const add_for_compare = props.save_funcion;
+    const [compare_list, setCompareList] = props.compare_list;
+    const [tabFilled, setTabFilled] = props.filled;
     const grid_columns = [1, 2, 3, 4, 5, 6, 7, 8];
     const grid_rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    const pred_elems_margin_bottom = tabFilled?"6%":"3%";
     return (
         <div>
             <div className="output-tiles">
@@ -20,7 +24,7 @@ export default function SimulatorOutput(props: any) {
                     )}
                 </div>
             </div>
-            <div className="pred-elements">
+            <div className="pred-elements" style={{marginBottom:pred_elems_margin_bottom}}>
                 <div id="monthly" className="elm">
                     <div className="pred-icon">
                         <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,6 +70,8 @@ export default function SimulatorOutput(props: any) {
                     </div>
                 </div>
             </div>
+            {tabFilled&&<ComparisonTab save_funcion={add_for_compare} compare_list={[compare_list, setCompareList]}/>}
+            
         </div>
     )
 }
