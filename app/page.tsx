@@ -27,24 +27,29 @@ function get_buttom(step: number, f: (n: number) => void) {
       </svg>));
     }
     else {
-      elems.push((<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      elems.push((<svg onClick={() => f(b-1)} width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="8.92773" cy="8.5" r="8" stroke="#DAFFC9" />
       </svg>));
     }
   })
 
   var btn = null;
-  if (step < 5) {
+  if (step == 1) {
     btn = (
       <svg onClick={() => f(step)} width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24.4277" cy="24" r="24" fill="#C7F5B1"/>
-<path d="M27.7613 12.6318L17.333 22.443C16.6859 23.0519 16.6859 24.0391 17.333 24.6481L27.7613 34.4592" stroke="#376720" stroke-width="4.09263" stroke-linecap="round"/>
-</svg>
-
-    );
+        <circle cx="24.4277" cy="24" r="24" fill="#C7F5B1"/>
+        <path d="M27.7613 12.6318L17.333 22.443C16.6859 23.0519 16.6859 24.0391 17.333 24.6481L27.7613 34.4592" stroke="#376720" stroke-width="4.09263" stroke-linecap="round"/>
+      </svg> );
   }
-  else {
-    btn = (<a href="/simulator"> בואו נתחיל</a>);
+  if (1 < step && step < 5){
+    btn = (
+    <svg onClick={() => f(step)} xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
+        <circle cx="18.9277" cy="18.5" r="18.5" fill="#C7F5B1"/>
+        <path d="M21.3722 9.73828L13.3817 17.301C12.8858 17.7705 12.8858 18.5314 13.3817 19.0008L21.3722 26.5635" stroke="#376720" stroke-width="3.15474" stroke-linecap="round"/>
+    </svg> );
+  }
+  if (step == 5) {
+    btn = (<a href="/simulator"> בואו נתחיל</a> );
   }
 
   return (
@@ -70,45 +75,7 @@ export default function Home() {
   const [board_state, setBorardState] = useState(false);
   const borad = get_board(board_state);
   
-  function step(n: number) {
-    var mod1 = (document.getElementById("welcome-modal") as HTMLInputElement);
-    var mod2 = (document.getElementById("first-modal") as HTMLInputElement);
-    var mod3 = (document.getElementById("impact-modal") as HTMLInputElement);
-    var mod4 = (document.getElementById("dogri-modal") as HTMLInputElement);
-    var mod5 = (document.getElementById("eys-modal") as HTMLInputElement);
-    
-    const header_h1 = (document.getElementsByTagName("h1") as HTMLCollectionOf<HTMLElement>);
-    const pred_elements = (document.getElementsByClassName("elm") as HTMLCollectionOf<HTMLElement>);
-    const tiles = (document.getElementsByClassName("output-tiles") as HTMLCollectionOf<HTMLElement>);
-    if (n == 1) {
-      mod1.style.display = "none";
-      mod2.style.display = "block";
-      header_h1[0].style.opacity="50%";
-      pred_elements[0].style.opacity="50%";
-      pred_elements[1].style.opacity="50%";
-    }
-    if (n == 2) {
-      mod2.style.display = "none";
-      mod3.style.display = "block";
-      setBorardState(true);
-    }
-
-    if (n == 3) {
-      mod3.style.display = "none";
-      mod4.style.display = "block";
-      setBorardState(false);
-      pred_elements[1].style.opacity="100%";
-      tiles[0].style.opacity="50%";
-    }
-
-    if (n == 4) {
-      mod4.style.display = "none";
-      mod5.style.display = "block";
-      pred_elements[1].style.opacity="50%";
-      pred_elements[0].style.opacity="100%";
-    }
-  }
-
+  const [tab1Clicked, setTab1Clicked] = useState(false);
   const [tab1Filled, setTab1Filled] = useState(false);
   const [tab2Filled, setTab2Filled] = useState(false);
   const [tab3Filled, setTab3Filled] = useState(false);
@@ -116,6 +83,77 @@ export default function Home() {
   const [isTab1Open, setIsTab1Open] = useState(false);
   const [isTab2Open, setIsTab2Open] = useState(false);
   const [isTab3Open, setIsTab3Open] = useState(false);
+
+  const [continue1Clikced, setContinue1Clikced] = useState(false);
+  const [continue2Clikced, setContinue2Clikced] = useState(false);
+  const [continue3Clikced, setContinue3Clikced] = useState(false);
+
+  function step(n: number) {
+    var mod1 = (document.getElementById("welcome-modal") as HTMLInputElement);
+    var mod2 = (document.getElementById("first-modal") as HTMLInputElement);
+    var mod3 = (document.getElementById("impact-modal") as HTMLInputElement);
+    var mod4 = (document.getElementById("dogri-modal") as HTMLInputElement);
+    var mod5 = (document.getElementById("eyes-modal") as HTMLInputElement);
+    
+    const header_h1 = (document.getElementsByTagName("h1") as HTMLCollectionOf<HTMLElement>);
+    const pred_elements = (document.getElementsByClassName("elm") as HTMLCollectionOf<HTMLElement>);
+    const tiles = (document.getElementsByClassName("output-tiles") as HTMLCollectionOf<HTMLElement>);
+    if (n == 0) { // first click - moves to second tab
+        mod1.style.display = "block";
+        mod2.style.display = "none";
+        mod3.style.display = "none";
+        mod4.style.display = "none";
+        mod5.style.display = "none";
+        header_h1[0].style.opacity="50%";
+        pred_elements[0].style.opacity="50%";
+        pred_elements[1].style.opacity="50%";
+      }
+    if (n == 1) { // first click - moves to second tab
+      mod1.style.display = "none";
+      mod2.style.display = "block";
+      mod3.style.display = "none";
+      mod4.style.display = "none";
+      mod5.style.display = "none";
+      header_h1[0].style.opacity="50%";
+      pred_elements[0].style.opacity="50%";
+      pred_elements[1].style.opacity="50%";
+    }
+    if (n == 2) {
+        mod1.style.display = "none";
+        mod2.style.display = "none";
+        mod3.style.display = "block";
+        mod4.style.display = "none";
+        mod5.style.display = "none";
+      setBorardState(true);
+    }
+
+    if (n == 3) {
+        mod1.style.display = "none";
+        mod2.style.display = "none";
+        mod3.style.display = "none";
+        mod4.style.display = "block";
+        mod5.style.display = "none";
+      setBorardState(false);
+      pred_elements[1].style.opacity="100%";
+      tiles[0].style.opacity="50%";
+    }
+
+    if (n == 4) {
+        mod1.style.display = "none";
+        mod2.style.display = "none";
+        mod3.style.display = "none";
+        mod4.style.display = "none";
+        mod5.style.display = "block";
+      pred_elements[1].style.opacity="50%";
+      pred_elements[0].style.opacity="100%";
+    }
+
+    if (n == 5){
+        setTab1Clicked(true);
+        console.log("setTab1Clicked"+ tab1Clicked);
+    }
+  }
+
 
 
   const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, route, is_male);
@@ -125,9 +163,9 @@ export default function Home() {
     <div dir='rtl'>
       <div className="simulator">
         <div className="right" style={{opacity:0.5}}>
-          <PersonalInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} age={[age, setAge]} salary={[salary, setSalary]} is_male={[is_male, setIsMale]} />
-          <RouteInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} function={[route, setRoute]} />
-          <FundInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} tab3Filled={[tab3Filled, setTab3Filled]} />
+          <PersonalInput opacity = {0.5} tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} age={[age, setAge]} salary={[salary, setSalary]} is_male={[is_male, setIsMale]} continue1Clicked = {[continue1Clikced, setContinue1Clikced]}/>
+          <RouteInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} function={[route, setRoute]}  continue1Clicked = {[continue1Clikced, setContinue1Clikced]} continue2Clicked = {[continue2Clikced, setContinue2Clikced]}/>
+          <FundInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} tab3Filled={[tab3Filled, setTab3Filled]} continue1Clicked = {[continue1Clikced, setContinue1Clikced]} continue2Clicked = {[continue2Clikced, setContinue2Clikced]} continue3Clicked = {[continue3Clikced, setContinue3Clikced]}/>
         </div>
         <div className="left">
           <h1><a href="/.">פנסיה פתוחה</a></h1>
@@ -138,11 +176,8 @@ export default function Home() {
       <div id="welcome-modal" className="modal">
         <div className="modal-content">
           <h2>עתיד טוב יותר</h2>
-          <p>״פנסיה פתוחה״ מבית הסנדא לידע ציבורי הוא כלי המיועד להנגיש את נושא הפנסיה בצורה קלה וידידותית.
-          </p>
-          <p>
-            בעזרתו תלמדו על מושגי פנסיה חשובים, תקבלו תמונת מצב ברורה לגבי סכום החיסכון שלכם ותגלו כיצד ניתן להגדיל אותו ולהרוויח עד מאות אלפי שקלים.
-          </p>
+            <p >״פנסיה פתוחה״ מבית הסנדא לידע ציבורי הוא כלי המיועד להנגיש את נושא הפנסיה בצורה קלה וידידותית.</p>
+            <p>בעזרתו תלמדו על מושגי פנסיה חשובים, תקבלו תמונת מצב ברורה לגבי סכום החיסכון שלכם ותגלו כיצד ניתן להגדיל אותו ולהרוויח עד מאות אלפי שקלים.</p>
           {get_buttom(1, step)}
         </div>
       </div>
@@ -189,7 +224,7 @@ export default function Home() {
           {get_buttom(4, step)}
         </div>
       </div>
-      <div id="eys-modal" className="modal">
+      <div id="eyes-modal" className="modal">
         <div className="modal-content">
           <h3>עיניים אל המטרה:</h3>
           <p>כאן אפשר לראות את גובה הקצבה החודשית הצפויה לך לאחר הפרישה, קצבה זו תהיה מקור ההכנסה שלך.
