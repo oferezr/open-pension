@@ -5,6 +5,7 @@ export default function SimulatorOutput(props: any) {
     const income = props.monthly;
     const total = props.savings;
     const borad = props.borad
+    const [active, setActive] = props.active;
     const add_for_compare = props.save_funcion;
     const [compare_list, setCompareList] = props.compare_list;
     const [tabFilled, setTabFilled] = props.filled;
@@ -12,7 +13,7 @@ export default function SimulatorOutput(props: any) {
     const grid_rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     const pred_elems_margin_bottom = tabFilled?"6%":"3%";
     return (
-        <div>
+        <div style={{opacity:active?1:0.5}}>
             <div className="output-tiles">
                 <div className='backgound-tilt-grid'>
                     {grid_rows.map(r =>

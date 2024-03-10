@@ -55,7 +55,7 @@ body{
   right: 0;
   z-index: -100;
   width: 80%;
-  margin: 5%;
+  margin-right: 5%;
   overflow: hidden;
 }
 
@@ -65,7 +65,7 @@ body{
   right: 0;
   z-index: -100;
   width: 50%;
-  margin: 5% 45% 5% 5%;
+  margin: 4% 45% 5% 5%;
   overflow: hidden;
 }
 

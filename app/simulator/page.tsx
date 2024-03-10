@@ -7,7 +7,7 @@ import RouteInput from "@/lib/components/simulator/simulator_input/route-input";
 import SimulatorOutput from "@/lib/components/simulator/simulator_output/simulator_output";
 import { monthly_income_by_by_sliders, saving_by_by_sliders } from "@/lib/utils/client";
 import Link from "next/link";
-import { useState } from "react";
+import { use, useState } from "react";
 
 export interface CompareSave {
   age:number;
@@ -64,7 +64,7 @@ export default function Home() {
   const interest_slider = 0.5;
   const borad = get_board(route);
   const [compare_list, setCompareList] = useState<CompareSave[]>([]);
-
+  const [active, setActive] = useState(true);
   const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, route, is_male);
   const total_savings = saving_by_by_sliders(salary, age, interest_slider, route, is_male);
   
@@ -102,7 +102,7 @@ export default function Home() {
         </div>
         <div className="left">
           <h1><a href="/.">פנסיה פתוחה</a></h1>
-          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} save_funcion={add_for_compare} compare_list={[compare_list, setCompareList]} filled = {[tab2Filled, setTab2Filled]} />
+          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} save_funcion={add_for_compare} compare_list={[compare_list, setCompareList]} filled = {[tab2Filled, setTab2Filled]} active ={[active, setActive]}/>
         </div>
       </div>
       

@@ -94,3 +94,17 @@ export function monthly_income_by_by_sliders(salery: number, age: number, intres
     const saving_interest = extract_saving_interest_from_slider(intrest_slider);
     return monthly_income(salery, age, saving_interest, deposite_interest, yearly, is_male);
 }
+
+export function monthly_by_yearly(salery: number, age: number, yearly_slider: number, is_male: boolean = true){
+    const yearly = extract_yearly_from_slider(yearly_slider);
+    const deposite_interest = extract_deposite_interest_from_slider(0.5);
+    const saving_interest = extract_saving_interest_from_slider(0.5);
+    return monthly_income(salery, age, saving_interest, deposite_interest, yearly, is_male);
+}
+
+export function saving_by_yearly(salery: number, age: number, yearly_slider: number, is_male: boolean = true){
+    const yearly = extract_yearly_from_slider(yearly_slider);
+    const deposite_interest = extract_deposite_interest_from_slider(0.5);
+    const saving_interest = extract_saving_interest_from_slider(0.5);
+    return saving_result(salery, age, saving_interest, deposite_interest, yearly, is_male);
+}

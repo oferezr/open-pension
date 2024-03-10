@@ -39,7 +39,7 @@ export function Tile(props: any) {
   const b_cords = convert_cordinated(row, column);
   const color = get_color(b_cords, borad);
   var inner = (<svg width="100" height="50" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M100 24.9965L49.9964 50L0 24.9965L49.9964 0L100 24.9965Z" fill={color}/>
+    <path d="M100 24.9965L49.9964 50L0 24.9965L49.9964 0L100 24.9965Z"/>
   </svg>);
   if(b_cords.x<5 && b_cords.x>-2 && b_cords.y<5 && b_cords.y>-2){
     var inner = (<svg width="100" height="50" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">

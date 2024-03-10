@@ -76,7 +76,7 @@ export default function Home() {
   const [board_state, setBorardState] = useState(false);
   const [compare_list, setCompareList] = useState<CompareSave[]>([]);
   const borad = get_board(board_state);
-  
+  const [active, setActive] = useState(false);
   const [tab1Clicked, setTab1Clicked] = useState(false);
   const [tab1Filled, setTab1Filled] = useState(false);
   const [tab2Filled, setTab2Filled] = useState(false);
@@ -109,6 +109,7 @@ export default function Home() {
         header_h1[0].style.opacity="50%";
         pred_elements[0].style.opacity="50%";
         pred_elements[1].style.opacity="50%";
+        setActive(false);
       }
     if (n == 1) { // first click - moves to second tab
       mod1.style.display = "none";
@@ -119,6 +120,7 @@ export default function Home() {
       header_h1[0].style.opacity="50%";
       pred_elements[0].style.opacity="50%";
       pred_elements[1].style.opacity="50%";
+      setActive(true);
     }
     if (n == 2) {
         mod1.style.display = "none";
@@ -127,6 +129,7 @@ export default function Home() {
         mod4.style.display = "none";
         mod5.style.display = "none";
       setBorardState(true);
+      setActive(true);
     }
 
     if (n == 3) {
@@ -138,6 +141,7 @@ export default function Home() {
       setBorardState(false);
       pred_elements[1].style.opacity="100%";
       tiles[0].style.opacity="50%";
+      setActive(true);
     }
 
     if (n == 4) {
@@ -148,11 +152,13 @@ export default function Home() {
         mod5.style.display = "block";
       pred_elements[1].style.opacity="50%";
       pred_elements[0].style.opacity="100%";
+      setActive(true);
     }
 
     if (n == 5){
         setTab1Clicked(true);
         console.log("setTab1Clicked"+ tab1Clicked);
+        setActive(true);
     }
   }
 
@@ -171,7 +177,7 @@ export default function Home() {
         </div>
         <div className="left">
           <h1><a href="/.">פנסיה פתוחה</a></h1>
-          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} filled = {[tab2Filled, setTab2Filled]} compare_list={[compare_list, setCompareList]}/>
+          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} filled = {[tab2Filled, setTab2Filled]} compare_list={[compare_list, setCompareList]} active ={[active, setActive]}/>
         </div>
       </div>
 
