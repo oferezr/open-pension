@@ -70,7 +70,6 @@ export default function Home() {
   
 //   const [tab1Clicked, setTab1Clicked] = useState(true);
 
-
   const [tab1Filled, setTab1Filled] = useState(false);
   const [tab2Filled, setTab2Filled] = useState(false);
   const [tab3Filled, setTab3Filled] = useState(false);

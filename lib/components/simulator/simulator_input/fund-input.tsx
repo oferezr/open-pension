@@ -77,41 +77,6 @@ export default function FundInput(props:any) {
       };
     };
 
-    // const [backgroundColor, setBackgroundColor] = useState('#BCECA5'); // Initial background color
-    // // Function to change the background color
-    // const myChangeColor = () => {
-    // const newColor = '#315cd2';
-    // const baseColor = '#BCECA5'
-    // if (backgroundColor == newColor){
-    //     setBackgroundColor(baseColor); 
-    // }else{
-    //     setBackgroundColor(newColor); 
-    // }
-
-    // };
-
-    // const [backgroundColor, setBackgroundColor] = useState<string[]>(['#CEF7BB', /* other colors */]);
-
-    // const changeColor = (index: number) => {
-    //     const newColor = '#9EDA82';
-    //     const baseColor = '#CEF7BB';
-      
-    //     // Create a copy of the original array
-    //     const updatedColors = [...backgroundColor];
-      
-    //     // Check if the current background color is equal to the new color
-    //     if (updatedColors[index] === newColor) {
-    //       // If true, set the background color to the base color for the clicked item
-    //       updatedColors[index] = baseColor;
-    //     } else {
-    //       // If false, set the background color to the new color for the clicked item
-    //       updatedColors[index] = newColor;
-    //     }
-      
-    //     // Update the state with the modified array
-    //     setBackgroundColor(updatedColors);
-    //   };
-    
     const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(null);
 const [backgroundColor, setBackgroundColor] = useState<string[]>(['#BCECA5', /* other colors */]);
 
@@ -362,127 +327,128 @@ const changeColor = (index: number) => {
 
 
     return (
-    <div className={`simulator-input ${isTab3Open ? 'tab-open' : 'tab-closed'}`} style={!tab2Filled ? { opacity: 0.5 } : undefined}>
-        <div className='tab-container'>
-            <button className="arrow" onClick={handleToggleTab}>
-                {isTab1Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.487 2.18604C11.2863 1.10093 12.9082 1.10093 13.7076 2.18604L21.7965 13.1672C22.7693 14.4878 21.8264 16.3534 20.1862 16.3534L4.00833 16.3534C2.36817 16.3534 1.4253 14.4878 2.39805 13.1672L10.487 2.18604Z" fill="#376720"/>
-                    </svg> 
-                    : <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.5198 14.6186C14.7205 15.7038 13.0986 15.7038 12.2993 14.6186L4.21033 3.63746C3.23758 2.3169 4.18046 0.451303 5.82062 0.451303L21.9985 0.451305C23.6387 0.451305 24.5815 2.31691 23.6088 3.63747L15.5198 14.6186Z" fill="#376720"/>
-                    </svg> 
-                }
-            </button>
-            {isTab3Open &&(
-                <div className='tab-open'>            
-                    <div className="icon" onClick={handleToggleTab}>
-                        <svg width="49" height="38" viewBox="0 0 49 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <ellipse cx="23.8237" cy="16.7128" rx="10.8359" ry="5.94229" fill="#9EDA82"/>
-                            <path d="M14.8018 16.1757V8.85388L19.222 6.23096L23.8527 12.6997V21.3139L14.8018 16.1757Z" fill="#265B1F"/>
-                            <path d="M19.8115 5.84595L30.5497 0L35.558 5.64792L24.1015 12.2033L19.8115 5.84595Z" fill="#265B1F"/>
-                            <path d="M24.3599 12.6358L35.8117 6.09375L35.846 14.4195L24.3599 21.3143V12.6358Z" fill="#265B1F"/>
-                            <path d="M19.5942 5.98242L24.0629 12.5631" stroke="#9EDA82" stroke-width="0.514382" stroke-miterlimit="10"/>
-                            <path d="M24.1006 12.3262V21.3141" stroke="#9EDA82" stroke-width="0.514382" stroke-miterlimit="10"/>
-                            <path d="M35.6859 5.87158L24.1367 12.4668" stroke="#9EDA82" stroke-width="0.514382" stroke-miterlimit="10"/>
-                            <path d="M17.083 17.4715L20.2516 19.2705V13.8721L17.083 12.0049V17.4715Z" fill="#9EDA82"/>
-                            <path d="M14.8018 8.85484L19.39 6.12305L23.8527 12.7007" fill="#265B1F"/>
-                            <path d="M14.2581 25.3658C16.3988 25.3658 17.2969 26.2535 17.2969 28.4046V31.6313H16.0856V28.4046C16.0856 27.0366 15.5425 26.3997 14.2372 26.3997H12.9319V30.1485C12.9319 31.2136 12.3263 31.694 11.5117 31.694C11.1254 31.694 10.5719 31.6209 10.2691 31.506L10.4362 30.5558C10.6346 30.6184 10.8434 30.6706 11.1254 30.6706C11.5639 30.6706 11.731 30.4096 11.731 29.8039V26.3997H10.8747V25.3658H14.2581ZM20.0608 25.3658V31.6313H18.8494V25.3658H20.0608ZM21.3926 31.6313V30.5975H23.0007V27.5379C23.0007 26.7547 22.7919 26.3997 22.1549 26.3997H21.6119V25.3658H22.5204C23.7317 25.3658 24.212 25.982 24.212 27.2142V31.6313H21.3926ZM30.5744 28.3942V31.6313H29.4049V28.4464C29.4049 26.9949 28.6739 26.2639 27.4834 26.2639C26.7838 26.2639 26.1886 26.4936 25.6247 26.786L25.2174 25.9297C26.0737 25.4494 26.8882 25.2823 27.6818 25.2823C29.3526 25.2823 30.5744 26.2221 30.5744 28.3942ZM32.0928 25.3658H37.9301V28.9685C37.9301 31.057 36.9694 31.7044 35.685 31.7044C35.2151 31.7044 34.8287 31.6522 34.4215 31.5269L34.5572 30.5244C34.86 30.6184 35.2046 30.6706 35.5179 30.6706C36.3638 30.6706 36.7606 30.2634 36.7606 28.8641V26.3997H32.0928V25.3658ZM33.3354 28.0078V33.3752H32.1659V28.154L33.3354 28.0078Z" fill="#265B1F"/>
-                        </svg>
-                    </div>  
-                    <div className='main-content' >
-                        <div className='header' onClick={handleToggleTab}> 
-                            <h3>מי מנהל את הכסף שלי?</h3>
-                        </div>
-                        <div className='intro-text'>
-                            <p>
-                            את החיסכון הפנסיוני מנהלים עבורנו בתי השקעות (קרנות פנסיה), ובתמורה הם גובים מאיתנו דמי ניהול. 
-                            <br/>
-                            הם משקיעים את הכסף עבורנו בשוק ההון ובדרכים נוספות כדי להגדיל את החיסכון שלנו. 
-                            <br/>
-                            ההחלטה היכן תנוהל הפנסיה היא אחת ההחלטות החשובות שנעשה במישור הכלכלי והיא תשפיע על גובה קצבת הפנסיה.
-                            </p>
-                           
-                        </div>
-                        
-                        <div className="fund-slider">
-                            <div className="carousel-wrapper">
-                                <button className="button-prev" onClick={nextSlide}><svg width="18" height="70" viewBox="0 0 14 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.87495 0V49.1814C0.87495 44.0314 4.94372 39.8627 8.75623 36.4064C11.975 33.4876 14 29.2751 14 24.5876C14 19.9001 11.975 15.6876 8.75623 12.775C4.94372 9.31879 0.87495 5.15002 0.87495 0Z" fill="#BCECA5"/>
-                                    <path d="M4.62498 20.5249L8.70625 24.3624C8.9625 24.5999 8.9625 24.9874 8.70625 25.2249L4.62498 29.0624" stroke="#396832" stroke-width="1.60001" stroke-linecap="round"/>
-                                    </svg>
-                                </button>
-                                <div className="carousel-container" style={{ overflow: 'hidden', margin: '-1px' }}>
-                                <label className='in-carousel-text-container'>בחרו קרן פנסיה</label>
-                                    <div style={{ display: 'flex', ...updateCarousel() }}>
-                                        {/* {svgList.map((svgContent, index) => ( */}
-                                        {/* <div className='fund-elem' onClick={changeColor} key={index} style={{ flex: '0 0 33.33%', boxSizing: 'border-box', backgroundColor: backgroundColor, transition: 'background-color 0.3s ease',}}> */}
-                                            {/* Replace the content inside the <svg> with your actual SVG content */}
-                                            {/* <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 170 170" > */}
-                                            {/* Your SVG content goes here */}
-                                            {/* {svgContent} */}
-                                            {/* </svg> */}
-                                        {/* </div> */}
-                                        {/* ))} */}
-                                    {/* </div> */}
-                                    {svgList.map((svgContent, index) => (
-                                        <div
-                                            className='fund-elem'
-                                            onClick={() => changeColor(index)}
-                                            key={index}
-                                            style={{
-                                            flex: '0 0 33.33%',
-                                            boxSizing: 'border-box',
-                                            backgroundColor: backgroundColor[index],
-                                            transition: 'background-color 0.3s ease',
-                                            }}
-                                        >
-                                            {/* Replace the content inside the <svg> with your actual SVG content */}
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="90%" height="100%" viewBox="0 0 190 146">
-                                            {/* Your SVG content goes here */}
-                                            {svgContent}
+        <div className={`simulator-input ${isTab3Open ? 'tab-open' : 'tab-closed'}`} style={!tab2Filled ? { opacity: 0.5 } : undefined}>
+            <div className='tab-container'>
+                <button className="arrow" onClick={handleToggleTab}>
+                    {isTab1Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.487 2.18604C11.2863 1.10093 12.9082 1.10093 13.7076 2.18604L21.7965 13.1672C22.7693 14.4878 21.8264 16.3534 20.1862 16.3534L4.00833 16.3534C2.36817 16.3534 1.4253 14.4878 2.39805 13.1672L10.487 2.18604Z" fill="#376720"/>
+                        </svg> 
+                        : <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5198 14.6186C14.7205 15.7038 13.0986 15.7038 12.2993 14.6186L4.21033 3.63746C3.23758 2.3169 4.18046 0.451303 5.82062 0.451303L21.9985 0.451305C23.6387 0.451305 24.5815 2.31691 23.6088 3.63747L15.5198 14.6186Z" fill="#376720"/>
+                        </svg> 
+                    }
+                </button>
+                {isTab3Open &&(
+                    <div className='tab-open'>            
+                        <div className="icon" onClick={handleToggleTab}>
+                            <svg width="41" height="51" viewBox="0 0 41 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20.1997" cy="22.5238" rx="14.0752" ry="7.71867" fill="#9EDA82"/>
+                            <path d="M8.48047 21.8282V12.3177L14.2221 8.91064L20.2371 17.3132V28.5025L8.48047 21.8282Z" fill="#265B1F"/>
+                            <path d="M14.9873 8.40946L28.9355 0.815918L35.4411 8.15222L20.5597 16.6673L14.9873 8.40946Z" fill="#265B1F"/>
+                            <path d="M20.896 17.2287L35.7713 8.73096L35.8158 19.5455L20.896 28.5016V17.2287Z" fill="#265B1F"/>
+                            <path d="M14.7051 8.58691L20.5096 17.1348" stroke="#9EDA82" stroke-width="0.668151" stroke-miterlimit="10"/>
+                            <path d="M20.5586 16.8271V28.502" stroke="#9EDA82" stroke-width="0.668151" stroke-miterlimit="10"/>
+                            <path d="M35.6096 8.44238L20.6079 17.0092" stroke="#9EDA82" stroke-width="0.668151" stroke-miterlimit="10"/>
+                            <path d="M11.4443 23.5104L15.5601 25.8473V18.8351L11.4443 16.4097V23.5104Z" fill="#9EDA82"/>
+                            <path d="M8.48047 12.317L14.4404 8.76855L20.2371 17.3125" fill="#265B1F"/>
+                            <path d="M7.52961 34.6268C10.3621 34.6268 11.5503 35.8013 11.5503 38.6476V42.917H9.94757V38.6476C9.94757 36.8375 9.22909 35.9947 7.50197 35.9947H5.77486V40.955C5.77486 42.3643 4.97348 42.9999 3.89576 42.9999C3.38453 42.9999 2.65223 42.9032 2.25154 42.7512L2.47261 41.4938C2.73513 41.5768 3.01147 41.6458 3.38453 41.6458C3.96484 41.6458 4.18591 41.3004 4.18591 40.499V35.9947H3.05292V34.6268H7.52961ZM15.2073 34.6268V42.917H13.6046V34.6268H15.2073ZM16.9695 42.917V41.5491H19.0973V37.5008C19.0973 36.4645 18.821 35.9947 17.9781 35.9947H17.2597V34.6268H18.4617C20.0645 34.6268 20.7001 35.442 20.7001 37.0724V42.917H16.9695ZM29.1184 38.6337V42.917H27.5709V38.7028C27.5709 36.7823 26.6037 35.8151 25.0286 35.8151C24.1029 35.8151 23.3153 36.1191 22.5692 36.5059L22.0303 35.373C23.1633 34.7374 24.241 34.5163 25.2911 34.5163C27.5018 34.5163 29.1184 35.7598 29.1184 38.6337ZM31.1274 34.6268H38.8511V39.3937C38.8511 42.1571 37.5799 43.0137 35.8805 43.0137C35.2587 43.0137 34.7475 42.9446 34.2086 42.7788L34.3882 41.4524C34.7889 41.5768 35.2449 41.6458 35.6594 41.6458C36.7786 41.6458 37.3036 41.107 37.3036 39.2555V35.9947H31.1274V34.6268ZM32.7716 38.1225V45.2244H31.2242V38.316L32.7716 38.1225Z" fill="#265B1F"/>
+                            </svg>
+                        </div>  
+                        <div className='main-content' >
+                            <div className='header' onClick={handleToggleTab}> 
+                                <h3>מי מנהל את הכסף שלי?</h3>
+                            </div>
+                            <div className='tab-content'>
+                                <div className='intro-text'>
+                                    <p>
+                                    את החיסכון הפנסיוני מנהלים עבורנו בתי השקעות (קרנות פנסיה), 
+                                    ובתמורה הם גובים מאיתנו דמי ניהול. 
+                                    הם משקיעים את הכסף עבורנו בשוק ההון ובדרכים נוספות כדי להגדיל את החיסכון שלנו. 
+                                    <br/>
+                                    ההחלטה היכן תנוהל הפנסיה היא אחת ההחלטות החשובות שנעשה במישור הכלכלי והיא תשפיע על גובה קצבת הפנסיה.
+                                    </p>
+                                
+                                </div>
+                                <div className="fund-slider">
+                                    <div className="carousel-wrapper">
+                                        <button className="button-prev" onClick={nextSlide}><svg width="18" height="70" viewBox="0 0 14 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.87495 0V49.1814C0.87495 44.0314 4.94372 39.8627 8.75623 36.4064C11.975 33.4876 14 29.2751 14 24.5876C14 19.9001 11.975 15.6876 8.75623 12.775C4.94372 9.31879 0.87495 5.15002 0.87495 0Z" fill="#BCECA5"/>
+                                            <path d="M4.62498 20.5249L8.70625 24.3624C8.9625 24.5999 8.9625 24.9874 8.70625 25.2249L4.62498 29.0624" stroke="#396832" stroke-width="1.60001" stroke-linecap="round"/>
                                             </svg>
+                                        </button>
+                                        <div className="carousel-container" style={{ overflow: 'hidden', margin: '-1px' }}>
+                                        <label className='in-carousel-text-container'>בחרו קרן פנסיה</label>
+                                            <div style={{ display: 'flex', ...updateCarousel() }}>
+                                                {/* {svgList.map((svgContent, index) => ( */}
+                                                {/* <div className='fund-elem' onClick={changeColor} key={index} style={{ flex: '0 0 33.33%', boxSizing: 'border-box', backgroundColor: backgroundColor, transition: 'background-color 0.3s ease',}}> */}
+                                                    {/* Replace the content inside the <svg> with your actual SVG content */}
+                                                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 170 170" > */}
+                                                    {/* Your SVG content goes here */}
+                                                    {/* {svgContent} */}
+                                                    {/* </svg> */}
+                                                {/* </div> */}
+                                                {/* ))} */}
+                                            {/* </div> */}
+                                            {svgList.map((svgContent, index) => (
+                                                <div
+                                                    className='fund-elem'
+                                                    onClick={() => changeColor(index)}
+                                                    key={index}
+                                                    style={{
+                                                    flex: '0 0 33.33%',
+                                                    boxSizing: 'border-box',
+                                                    backgroundColor: backgroundColor[index],
+                                                    transition: 'background-color 0.3s ease',
+                                                    }}
+                                                >
+                                                    {/* Replace the content inside the <svg> with your actual SVG content */}
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="90%" height="100%" viewBox="0 0 190 146">
+                                                    {/* Your SVG content goes here */}
+                                                    {svgContent}
+                                                    </svg>
+                                                </div>
+                                                ))}
+                                            </div>
                                         </div>
-                                        ))}
+                                        <button className = "button-next" onClick={prevSlide}>
+                                            <svg width="18" height="70" viewBox="0 0 14 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.125 0V49.1814C13.125 44.0314 9.05628 39.8627 5.24377 36.4064C2.02501 33.4876 0 29.2751 0 24.5876C0 19.9001 2.02501 15.6876 5.24377 12.775C9.05628 9.31879 13.125 5.15002 13.125 0Z" fill="#BCECA5"/>
+                                            <path d="M9.37502 20.5249L5.29375 24.3624C5.0375 24.5999 5.0375 24.9874 5.29375 25.2249L9.37502 29.0624" stroke="#396832" stroke-width="1.60001" stroke-linecap="round"/>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
-                                <button className = "button-next" onClick={prevSlide}>
-                                    <svg width="18" height="70" viewBox="0 0 14 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.125 0V49.1814C13.125 44.0314 9.05628 39.8627 5.24377 36.4064C2.02501 33.4876 0 29.2751 0 24.5876C0 19.9001 2.02501 15.6876 5.24377 12.775C9.05628 9.31879 13.125 5.15002 13.125 0Z" fill="#BCECA5"/>
-                                    <path d="M9.37502 20.5249L5.29375 24.3624C5.0375 24.5999 5.0375 24.9874 5.29375 25.2249L9.37502 29.0624" stroke="#396832" stroke-width="1.60001" stroke-linecap="round"/>
+                                <button className='continue' onClick={handleNextTab}>
+                                    <svg width="89" height="30" viewBox="0 0 89 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="89" height="30" rx="8" fill="#265B1F"/>
+                                        <path d="M30.0072 11.7824H31.2093V15.2953L30.0072 15.4922V11.7824ZM35.7775 11.7824C37.9018 11.7824 38.793 12.6632 38.793 14.7979V18H37.5909V14.7979C37.5909 13.4404 37.0521 12.8083 35.7567 12.8083H34.4614V16.5285C34.4614 17.5855 33.8604 18.0622 33.0521 18.0622C32.6686 18.0622 32.1194 17.9896 31.8189 17.8756L31.9847 16.9326C32.1816 16.9948 32.3889 17.0466 32.6686 17.0466C33.1039 17.0466 33.2697 16.7876 33.2697 16.1865V12.8083H32.4199V11.7824H35.7775ZM43.9015 11.6891C45.5907 11.6891 46.7202 12.9948 46.7202 14.8601C46.7202 17.4611 45.1554 18.6632 42.7616 17.7617L43.0311 16.7876C44.7098 17.4611 45.5907 16.6839 45.5907 14.8601C45.5907 13.5544 44.8964 12.7461 43.9534 12.7461C42.9482 12.7461 42.3886 13.6788 42.0052 15.0984L41.228 18H40.0363L40.8342 15.1088L39.7047 11.7824H40.886L41.4767 13.6477C41.9119 12.4974 42.7513 11.6891 43.9015 11.6891ZM47.9486 11.7824H49.1507V15.2953L47.9486 15.4922V11.7824ZM50.5854 11.7824H51.7874V15.2953L50.5854 15.4922V11.7824ZM56.1926 11.7824C58.1408 11.7824 59.2289 12.8808 59.2289 14.8394C59.2289 16.8601 58.0786 18.1244 56.1926 18.1244C54.2962 18.1244 53.146 16.8601 53.146 14.8394V11.7824H56.1926ZM56.1926 17.0984C57.3532 17.0984 58.0268 16.2176 58.0268 14.8394C58.0268 13.5648 57.405 12.8083 56.1926 12.8083H54.348V14.8394C54.348 16.2176 55.0216 17.0984 56.1926 17.0984Z" fill="#DAFFC9"/>
                                     </svg>
                                 </button>
                             </div>
                         </div>
-                        <button className='continue' onClick={handleNextTab}>
-                            <svg width="89" height="30" viewBox="0 0 89 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="89" height="30" rx="8" fill="#265B1F"/>
-                                <path d="M30.0072 11.7824H31.2093V15.2953L30.0072 15.4922V11.7824ZM35.7775 11.7824C37.9018 11.7824 38.793 12.6632 38.793 14.7979V18H37.5909V14.7979C37.5909 13.4404 37.0521 12.8083 35.7567 12.8083H34.4614V16.5285C34.4614 17.5855 33.8604 18.0622 33.0521 18.0622C32.6686 18.0622 32.1194 17.9896 31.8189 17.8756L31.9847 16.9326C32.1816 16.9948 32.3889 17.0466 32.6686 17.0466C33.1039 17.0466 33.2697 16.7876 33.2697 16.1865V12.8083H32.4199V11.7824H35.7775ZM43.9015 11.6891C45.5907 11.6891 46.7202 12.9948 46.7202 14.8601C46.7202 17.4611 45.1554 18.6632 42.7616 17.7617L43.0311 16.7876C44.7098 17.4611 45.5907 16.6839 45.5907 14.8601C45.5907 13.5544 44.8964 12.7461 43.9534 12.7461C42.9482 12.7461 42.3886 13.6788 42.0052 15.0984L41.228 18H40.0363L40.8342 15.1088L39.7047 11.7824H40.886L41.4767 13.6477C41.9119 12.4974 42.7513 11.6891 43.9015 11.6891ZM47.9486 11.7824H49.1507V15.2953L47.9486 15.4922V11.7824ZM50.5854 11.7824H51.7874V15.2953L50.5854 15.4922V11.7824ZM56.1926 11.7824C58.1408 11.7824 59.2289 12.8808 59.2289 14.8394C59.2289 16.8601 58.0786 18.1244 56.1926 18.1244C54.2962 18.1244 53.146 16.8601 53.146 14.8394V11.7824H56.1926ZM56.1926 17.0984C57.3532 17.0984 58.0268 16.2176 58.0268 14.8394C58.0268 13.5648 57.405 12.8083 56.1926 12.8083H54.348V14.8394C54.348 16.2176 55.0216 17.0984 56.1926 17.0984Z" fill="#DAFFC9"/>
+                    </div>
+                )}{!isTab3Open &&(
+                    <div className="tab-closed" onClick={handleToggleTab}>
+                        <div className="icon">
+                            <svg width="41" height="51" viewBox="0 0 41 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="20.1997" cy="22.5238" rx="14.0752" ry="7.71867" fill="#9EDA82"/>
+                                <path d="M8.48047 21.8282V12.3177L14.2221 8.91064L20.2371 17.3132V28.5025L8.48047 21.8282Z" fill="#265B1F"/>
+                                <path d="M14.9873 8.40946L28.9355 0.815918L35.4411 8.15222L20.5597 16.6673L14.9873 8.40946Z" fill="#265B1F"/>
+                                <path d="M20.896 17.2287L35.7713 8.73096L35.8158 19.5455L20.896 28.5016V17.2287Z" fill="#265B1F"/>
+                                <path d="M14.7051 8.58691L20.5096 17.1348" stroke="#9EDA82" stroke-width="0.668151" stroke-miterlimit="10"/>
+                                <path d="M20.5586 16.8271V28.502" stroke="#9EDA82" stroke-width="0.668151" stroke-miterlimit="10"/>
+                                <path d="M35.6096 8.44238L20.6079 17.0092" stroke="#9EDA82" stroke-width="0.668151" stroke-miterlimit="10"/>
+                                <path d="M11.4443 23.5104L15.5601 25.8473V18.8351L11.4443 16.4097V23.5104Z" fill="#9EDA82"/>
+                                <path d="M8.48047 12.317L14.4404 8.76855L20.2371 17.3125" fill="#265B1F"/>
+                                <path d="M7.52961 34.6268C10.3621 34.6268 11.5503 35.8013 11.5503 38.6476V42.917H9.94757V38.6476C9.94757 36.8375 9.22909 35.9947 7.50197 35.9947H5.77486V40.955C5.77486 42.3643 4.97348 42.9999 3.89576 42.9999C3.38453 42.9999 2.65223 42.9032 2.25154 42.7512L2.47261 41.4938C2.73513 41.5768 3.01147 41.6458 3.38453 41.6458C3.96484 41.6458 4.18591 41.3004 4.18591 40.499V35.9947H3.05292V34.6268H7.52961ZM15.2073 34.6268V42.917H13.6046V34.6268H15.2073ZM16.9695 42.917V41.5491H19.0973V37.5008C19.0973 36.4645 18.821 35.9947 17.9781 35.9947H17.2597V34.6268H18.4617C20.0645 34.6268 20.7001 35.442 20.7001 37.0724V42.917H16.9695ZM29.1184 38.6337V42.917H27.5709V38.7028C27.5709 36.7823 26.6037 35.8151 25.0286 35.8151C24.1029 35.8151 23.3153 36.1191 22.5692 36.5059L22.0303 35.373C23.1633 34.7374 24.241 34.5163 25.2911 34.5163C27.5018 34.5163 29.1184 35.7598 29.1184 38.6337ZM31.1274 34.6268H38.8511V39.3937C38.8511 42.1571 37.5799 43.0137 35.8805 43.0137C35.2587 43.0137 34.7475 42.9446 34.2086 42.7788L34.3882 41.4524C34.7889 41.5768 35.2449 41.6458 35.6594 41.6458C36.7786 41.6458 37.3036 41.107 37.3036 39.2555V35.9947H31.1274V34.6268ZM32.7716 38.1225V45.2244H31.2242V38.316L32.7716 38.1225Z" fill="#265B1F"/>
                             </svg>
-                        </button>
-                    </div>
-                </div>
-            )}{!isTab3Open &&(
-                <div className="tab-closed" onClick={handleToggleTab}>
-                    <div className="icon">
-                        <svg width="49" height="38" viewBox="0 0 49 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <ellipse cx="23.8237" cy="16.7128" rx="10.8359" ry="5.94229" fill="#9EDA82"/>
-                            <path d="M14.8018 16.1757V8.85388L19.222 6.23096L23.8527 12.6997V21.3139L14.8018 16.1757Z" fill="#265B1F"/>
-                            <path d="M19.8115 5.84595L30.5497 0L35.558 5.64792L24.1015 12.2033L19.8115 5.84595Z" fill="#265B1F"/>
-                            <path d="M24.3599 12.6358L35.8117 6.09375L35.846 14.4195L24.3599 21.3143V12.6358Z" fill="#265B1F"/>
-                            <path d="M19.5942 5.98242L24.0629 12.5631" stroke="#9EDA82" stroke-width="0.514382" stroke-miterlimit="10"/>
-                            <path d="M24.1006 12.3262V21.3141" stroke="#9EDA82" stroke-width="0.514382" stroke-miterlimit="10"/>
-                            <path d="M35.6859 5.87158L24.1367 12.4668" stroke="#9EDA82" stroke-width="0.514382" stroke-miterlimit="10"/>
-                            <path d="M17.083 17.4715L20.2516 19.2705V13.8721L17.083 12.0049V17.4715Z" fill="#9EDA82"/>
-                            <path d="M14.8018 8.85484L19.39 6.12305L23.8527 12.7007" fill="#265B1F"/>
-                            <path d="M14.2581 25.3658C16.3988 25.3658 17.2969 26.2535 17.2969 28.4046V31.6313H16.0856V28.4046C16.0856 27.0366 15.5425 26.3997 14.2372 26.3997H12.9319V30.1485C12.9319 31.2136 12.3263 31.694 11.5117 31.694C11.1254 31.694 10.5719 31.6209 10.2691 31.506L10.4362 30.5558C10.6346 30.6184 10.8434 30.6706 11.1254 30.6706C11.5639 30.6706 11.731 30.4096 11.731 29.8039V26.3997H10.8747V25.3658H14.2581ZM20.0608 25.3658V31.6313H18.8494V25.3658H20.0608ZM21.3926 31.6313V30.5975H23.0007V27.5379C23.0007 26.7547 22.7919 26.3997 22.1549 26.3997H21.6119V25.3658H22.5204C23.7317 25.3658 24.212 25.982 24.212 27.2142V31.6313H21.3926ZM30.5744 28.3942V31.6313H29.4049V28.4464C29.4049 26.9949 28.6739 26.2639 27.4834 26.2639C26.7838 26.2639 26.1886 26.4936 25.6247 26.786L25.2174 25.9297C26.0737 25.4494 26.8882 25.2823 27.6818 25.2823C29.3526 25.2823 30.5744 26.2221 30.5744 28.3942ZM32.0928 25.3658H37.9301V28.9685C37.9301 31.057 36.9694 31.7044 35.685 31.7044C35.2151 31.7044 34.8287 31.6522 34.4215 31.5269L34.5572 30.5244C34.86 30.6184 35.2046 30.6706 35.5179 30.6706C36.3638 30.6706 36.7606 30.2634 36.7606 28.8641V26.3997H32.0928V25.3658ZM33.3354 28.0078V33.3752H32.1659V28.154L33.3354 28.0078Z" fill="#265B1F"/>
-                        </svg>
-                    </div>
-                    <div className='header'> 
+                        </div>
+                        <div className='header'> 
                             <h3>מי מנהל את הכסף שלי?</h3>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
-    </div>
     );
 }

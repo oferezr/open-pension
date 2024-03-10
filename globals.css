@@ -19,23 +19,17 @@
   }
 @font-face {
     font-family: "Ploni-ultra-bold";
-    src: url("public/ploni_aaa/ploni-ultrabold-aaa.otf");
+    src: url("./public/ploni_aaa/ploni-ultrabold-aaa.otf");
   }
-
-  @font-face {
-    font-family: "Ploni-medium";
-    src: url("./public/ploni_aaa/ploni-medium-aaa.otf");
-  }  
 
 :root {
   --primary-color: #9EDA82;
-  --secondery-color: #376720;
+  --secondery-color: #194E00;
   --tertiary-color: #DAFFC9;
   --forth-color:#CEF7BB;
   --fifth-color:#BCECA5;
   --text-color: #ffffff;
   --primary-font: 'Ploni-regular';
-  --primary-font-med: 'Ploni-medium';
   --primary-font-demi: 'Ploni-demi-bold';
   --primary-font-ultra: 'Ploni-ultra-bold';
   --primary-font-bold: 'Ploni-Bold';
@@ -165,10 +159,11 @@ h1 a{
   margin-top: 10%;
 }
 .slider-box{
-  background-color: var(--forth-color);
+  background-color: #C2F0AC;
   padding: 2%;
   border-radius: 15px;
-  font-size: 16px;
+  font-size: 20px;
+  padding-right: 3%;
 }
 .slider-concepts{
   margin-top: 2%;
@@ -181,6 +176,7 @@ h1 a{
   flex: 0 0  45%;
   margin: 0  1%;
   font-size: 14px;
+  background-color: #CEF7BB;
 }
 
 .slider-concepts .slider-box label{
@@ -230,6 +226,7 @@ h1 a{
   text-align: center;
   color: var(--secondery-color);
   font-family: var(--primary-font-demi);
+  padding-top: 6px;
 }
 .simulator{
   display: flex;
@@ -291,26 +288,22 @@ h1 a{
     order:2;
     left:0;
     float: left;
-    /* grid-column: 500; */
-    /* grid-row: 1; */
     background-size: contain; 
     background-repeat: no-repeat;
     width: 50px; 
     height: 50px;
-    /* cursor: pointer; */
+    cursor: pointer;
     background-color: transparent;
     border: none;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-left: 1.5%;
+    margin-top: 1.5%
 }
+
 .icon{
     order:1;
-    /* grid-column: 1;
-    grid-row: 1; */
-    /* align-self: flex-start; */
     margin-left: 10px;
     margin-top: 10px;
-    /* cursor: pointer; */
+    margin-right: 1.3%;
 }
 .continue{
     /* position: absolute; */
@@ -323,15 +316,18 @@ h1 a{
     margin-top: 10px;
     background: none;
     border: none;
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
 .main-content{
     order:2;
-    /* grid-column: 2 / span 2;
-    grid-row: 1; */
-    /* flex:1; */
     font-family: var(--primary-font);
     margin-left: 44px;
     font-size: 16px;
+}
+
+.retire-age{
+    padding-top: 10px;
 }
 
 .simultor-input b{
@@ -357,27 +353,31 @@ h1 a{
 
 }
 .header h3{
-  margin-top: 3px;
+  margin-top: 15px;
+  margin-right: 20px;
   margin-bottom: 0;
   width: 100%;
   font-family: var(--primary-font-bold);
   font-size: 24px;
 }
 
+.tab-content{
+    margin-right: 20px;
+}
+
 
 .main-content label{
     flex:1;
     font-family: var(--primary-font-demi);
-    /* margin-left: 44px; */
-    font-size: 16px;
+    font-size: 20px;
 }
 
 
 .intro-text{
     font-family: var(--primary-font);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     margin-top: 15px;
-    font-size:16px;
+    font-size:20px;
 }
 
 
@@ -388,11 +388,12 @@ h1 a{
 
 .wrapper input {
   background-color: #DAFFC9;
-  border: 3px solid #000000; 
-  border-radius: 16px;
+  border: 2px solid #000000; 
+  border-radius: 10px;
   color:#000000;
   font-family: var(--primary-font);
-  font-size: 16px;
+  font-size: 18px;
+  width: 130px;
 }
 
 .wrapper input, textarea{
@@ -402,7 +403,8 @@ h1 a{
 .wrapper label {
   margin-bottom: 5px;
   display: block;
-  font-size: 16px;
+  font-size: 20px;
+  padding-right: 5px;
 }
 
 .cur-age,
@@ -456,7 +458,8 @@ h1 a{
 
 .subtext{
   font-family: var(--primary-font);
-  font-size: 12px;
+  font-size: 14px;
+  padding-top:7px;
 }
 
 .radio-container {
@@ -477,6 +480,7 @@ h1 a{
 .gender{
     padding-right: 10px;
     font-family: var(--primary-font);
+    font-size: 18px;
 }
 
 /* Hide the default radio input */
@@ -489,21 +493,20 @@ h1 a{
 .checkmark {
   position: relative;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  border: 1px solid var(--secondery-color); 
+  border: 1.8px solid #000000; 
   
 }
-    /* margin-right: 10px;  */
 
 
 
 .checkmark::after {
     content: '';
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 1px;
+    height: 1px;
     background-color: transparent;
     border-radius: 50%;
     position: absolute;
@@ -593,8 +596,6 @@ h1 a{
 /*Simulator output*/
 .pred-elements{
     background-color: var(--tertiary-color);
-    width: 20%;
-    height: 20%;
     border-radius: 15px;
     position: absolute;
     bottom: 0;
@@ -605,34 +606,31 @@ h1 a{
     grid-template-rows: auto auto;/* Two columns */
   }
   
-  /* .pred-elements > div:nth-child(odd){
-    text-align: center;
-    padding-top: 7%;
-    padding-bottom: 7%;
-    display: flex;
-    } */
 
   #monthly .pred-text h4{
     font-size: 32px;
   }
+
+  #monthly{
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-bottom: 7px;
+  }
     
-  /* .pred-elements > div:nth-child(even){
-  display: flex;
-  justify-content: right;
-  padding-top: 5%;
-    padding-bottom: 5%;
-  } */
   
   .elm{
     display: grid;
     grid-template-columns: auto auto; /* Two columns */
     grid-template-rows: auto; /* Single row */
-    /* gap: 10px; */
   }
+
   .pred-icon{
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; 
+    padding-left: 20px;
+    padding-bottom:12px;
   }
 
   .pred-text{
@@ -641,9 +639,10 @@ h1 a{
   }
 
   #gen-savings{
-    background-color: var(--forth-color);
+    background-color: #C9F4B5;
     border-radius: 0px 0px 15px 15px;
-    padding-top: 10px;
+    padding: 20px;
+    padding-bottom: 7px;
   }
 
 
@@ -651,7 +650,10 @@ h1 a{
     margin: 0;
     padding: 0;
     font-size: 20px;
+    line-height: 120%;
+    padding-bottom: 10px;
   }
+
   .pred-elements h4{
     font-family: var(--primary-font-demi);
     color: var(--secondery-color);
@@ -695,6 +697,8 @@ h1 a{
     border-radius: 20px;
     font-family: var(--primary-font-med);
     font-size: 20px;
+    padding-bottom: 15px;
+    padding-right: 20px;
   }
 
   .modal-content p {
@@ -712,23 +716,29 @@ h1 a{
   .modal-content h2{
     font-family: var(--primary-font-demi);
     font-size: 36px;
+    margin:0;
   }
   .modal-content h3{
     font-family: var(--primary-font-demi);
     margin: 0;
     font-size: 20px;
+
   }
   .modal-buttom{
     display: flex;
     justify-content: left;
     margin-left: 2%;
     padding-top: 5%;
+    padding-bottom: 0;
   }
+
+
   .modal-buttom .right{
     flex: 0 0 75%;
     text-align: center;
     padding-left: 5%;
     padding-top: 2%;
+    margin-bottom: 0;
   }
 
   .modal-buttom .right ul{
@@ -745,12 +755,17 @@ h1 a{
   }
 
   .modal-buttom .left a{
-    background: #DAFFC9;;
+    background: #DAFFC9;
+    padding-left: 10px;
   }
   
   .modal-buttom .left svg{
     cursor: pointer;
   }
+
+  /* .modal-buttom .left svg #hover{
+
+  } */
 
   .modal-content a{
     background-color: var(--primary-color);
@@ -770,6 +785,26 @@ h1 a{
   #first-modal, #impact-modal, #dogri-modal, #eyes-modal{
     display: none;
   }
+
+  #first-modal .modal-buttom{
+    padding-top: 0;
+  }
+
+  #first-modal .modal-buttom .right{
+    padding-left: 40px;
+  }
+  #impact-modal .modal-buttom .right{
+    padding-left: 40px;
+  }
+
+  #dogri-modal  .modal-buttom .right{
+    padding-left: 40px;
+  }
+
+  #eyes-modal  .modal-buttom .right{
+    padding-left: 0;
+  }
+
   .modal-content .split-containter{
     display: flex;
     justify-content: right;
@@ -786,41 +821,55 @@ h1 a{
     background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
     width: 1px;
   }
+  
   #welcome-modal .modal-content{
     position: fixed;
-    top: 33%;
-    right: 33%;
-    width: 33%;
+    top: 30%;
+    right: 26%;
+    width: 40%;
+    padding-left: 35px;
+    padding-right: 40px;
   }
+
   #first-modal .modal-content{
     position: fixed;
-    top: 120px;
-    right: 35%;
-    padding: 20px 5px;
+    top: 250px;
+    right: 30%;
     width: 35%;
-    /* padding-inline-start: 10px; */
+    padding-bottom: 6.5px;
+    padding-left: 10px;
   }
 
   #impact-modal .modal-content{
     position: fixed;
-    top: 150px;
-    right: 42%;
-    width: 25%;
+    top: 180px;
+    right: 46.5%;
+    width: 30%;
+    padding-left: 12px;
+    padding-bottom: 10px;
+  }
+
+  #impact-modal .modal-buttom{
+    padding-top: 0;
   }
 
   #dogri-modal .modal-content{
-    margin-left: 20px; 
+    margin-left: 50px; 
     position: fixed;
     bottom: 2%;
     left: 16%;
     width: 25%;
+    padding-left: 15px;
+    padding-right: 20px;
+    padding-bottom: 13px;
   }
   #eyes-modal .modal-content{
-    margin-left: 20px; 
+    margin-left: 50px; 
     position: fixed;
     bottom: 12%;
     left: 16%;
     width: 25%;
+    padding-bottom: 10px;
   }
 
   /* #eyes-modal .modal-content p{
@@ -1091,4 +1140,8 @@ color:var(--secondery-color);
     align-items: center;
       margin-bottom: 10px;
   }
-  
+
+  #second-par{
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
