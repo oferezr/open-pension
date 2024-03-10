@@ -831,13 +831,6 @@ h1 a{
     padding-top: 10px;
   } */
 
-
-  /*Fund Slider*/
-  .fund-slider{
-    width: 700px;
-  }
-
-
   /*Comparison Tab*/
   .comparison-tab{
     width: 13%;
@@ -1020,3 +1013,82 @@ color:var(--secondery-color);
   margin: 0;
   font-family: var(--primary-font-demi);
 }
+
+
+  /*Carousel Funds*/
+  /* .carousel-container{
+    background-color: #BCECA5;
+    position: relative;
+    width: 0%;
+    margin: -1px;
+    border-radius: 15px;
+    font-size: 16px;
+  } */
+  .carousel-container {
+    background-color: #BCECA5;
+    width: 80%;
+    height: 250px; /* Adjust the height value as needed */
+    border-radius: 15px;
+    font-size: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  /* Style the carousel wrapper */
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* background-color: #265b1f; */
+
+
+/* Style the specific navigation buttons */
+.button-prev,
+.button-next {
+  background-color:  #DAFFC9;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+}
+
+  /* background-color: #1f4c1a; */
+
+.button-prev:hover,
+.button-next:hover,
+.fund-elem:hover{
+  background-color: none;
+}
+
+.fund-elem{
+  padding: 4%;
+  border-radius: 10px;
+  cursor: pointer;
+  /* background-color: #315cd2; */
+  margin-bottom: 10px; 
+}
+
+.in-carousel-text-container {
+  display: flex;
+  padding: 1.5%;
+  font-size: 18px;
+  position: relative;
+  left: -50px; /* Move the text 100 pixels to the left */
+  top: 5px;
+}
+
+
+  /*Fund Slider*/
+  /* .fund-slider{
+    width: 700px;
+    position: relative;
+  } */
+  .fund-slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      margin-bottom: 10px;
+  }
+  
