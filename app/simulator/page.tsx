@@ -5,7 +5,7 @@ import FundInput from "@/lib/components/simulator/simulator_input/fund-input";
 import PersonalInput from "@/lib/components/simulator/simulator_input/personal-input";
 import RouteInput from "@/lib/components/simulator/simulator_input/route-input";
 import SimulatorOutput from "@/lib/components/simulator/simulator_output/simulator_output";
-import { monthly_income_by_by_sliders, saving_by_by_sliders } from "@/lib/utils/client";
+import { monthly_by_yearly, monthly_income_by_by_sliders, saving_by_by_sliders, saving_by_yearly } from "@/lib/utils/client";
 import Link from "next/link";
 import { use, useState } from "react";
 
@@ -61,12 +61,13 @@ export default function Home() {
   const [age, setAge] = useState(20);
   const [salary, setSalary] = useState(6800);
   const [is_male, setIsMale] = useState(true);
+  const [yearly,setYearly] = useState(5);
   const interest_slider = 0.5;
   const borad = get_board(route);
   const [compare_list, setCompareList] = useState<CompareSave[]>([]);
   const [active, setActive] = useState(true);
-  const monthly = monthly_income_by_by_sliders(salary, age, interest_slider, route, is_male);
-  const total_savings = saving_by_by_sliders(salary, age, interest_slider, route, is_male);
+  const monthly = monthly_by_yearly(salary, age, yearly, is_male);
+  const total_savings = saving_by_yearly(salary, age, yearly, is_male);
   
 //   const [tab1Clicked, setTab1Clicked] = useState(true);
 
@@ -98,11 +99,11 @@ export default function Home() {
         <div className="right">
           <PersonalInput style={{opacity: 0.5}} tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} age={[age, setAge]} salary={[salary, setSalary]} is_male={[is_male, setIsMale]} continue1Clicked = {[continue1Clikced, setContinue1Clikced]} />
           <RouteInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} function={[route, setRoute]} continue1Clicked = {[continue1Clikced, setContinue1Clikced]} continue2Clicked = {[continue2Clikced, setContinue2Clikced]}/>
-          <FundInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} tab3Filled={[tab3Filled, setTab3Filled]} continue1Clicked = {[continue1Clikced, setContinue1Clikced]} continue2Clicked = {[continue2Clikced, setContinue2Clikced]} continue3Clicked = {[continue3Clikced, setContinue3Clikced]}  route={[route, setRoute]}/>
+          <FundInput tab1Open={[isTab1Open, setIsTab1Open]} tab2Open={[isTab2Open, setIsTab2Open]} tab3Open={[isTab3Open, setIsTab3Open]} tab1Filled={[tab1Filled, setTab1Filled]} tab2Filled={[tab2Filled, setTab2Filled]} tab3Filled={[tab3Filled, setTab3Filled]} continue1Clicked = {[continue1Clikced, setContinue1Clikced]} continue2Clicked = {[continue2Clikced, setContinue2Clikced]} continue3Clicked = {[continue3Clikced, setContinue3Clikced]}  route={[route, setRoute]} fund={[yearly,setYearly]}/>
         </div>
         <div className="left">
           <h1><a href="/.">פנסיה פתוחה</a></h1>
-          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} save_funcion={add_for_compare} compare_list={[compare_list, setCompareList]} filled = {[tab2Filled, setTab2Filled]} active ={[active, setActive]}/>
+          <SimulatorOutput monthly={monthly} savings={total_savings} borad={borad} save_funcion={add_for_compare} compare_list={[compare_list, setCompareList]} filled = {[tab3Filled, setTab3Filled]} active ={[active, setActive]}/>
         </div>
       </div>
       
