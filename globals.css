@@ -133,7 +133,7 @@ h1 a{
     z-index: 1;
     color: var(--forth-color);
     padding: 10px 35px;
-    top: 53%;
+    top: 350px;
     right: 50%
 }
 #hover:before {
@@ -994,6 +994,7 @@ color:var(--secondery-color);
 }
 #compare-modal .buttons{
   text-align: center;
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 #compare-modal .buttons button{
@@ -1104,18 +1105,11 @@ color:var(--secondery-color);
 
 
   /*Carousel Funds*/
-  /* .carousel-container{
-    background-color: #BCECA5;
-    position: relative;
-    width: 0%;
-    margin: -1px;
-    border-radius: 15px;
-    font-size: 16px;
-  } */
+  
   .carousel-container {
     background-color: #BCECA5;
     width: 80%;
-    height: 250px; /* Adjust the height value as needed */
+    height: 200px; /* Adjust the height value as needed */
     border-radius: 15px;
     font-size: 16px;
     overflow: hidden;
