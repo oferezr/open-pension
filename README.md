@@ -6,9 +6,9 @@
 - Guy Orlinsky
 
 ### Design Team
-- Hodaya
-- Yeara
-- Efrat
+- Hodaya Kabada
+- Yaara Saidon
+- Efrat Zeroni
 
 ## Links:
 1. [Public Link](https://open-pension.vercel.app/)
