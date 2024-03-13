@@ -350,7 +350,7 @@ const [backgroundColor, setBackgroundColor] = useState<string[]>(['#BCECA5', /* 
         <div className={`simulator-input ${isTab3Open ? 'tab-open' : 'tab-closed'}`} style={!tab2Filled ? { opacity: 0.5 } : undefined}>
             <div className='tab-container'>
                 <button className="arrow" onClick={handleToggleTab}>
-                    {isTab2Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {isTab3Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.487 2.18604C11.2863 1.10093 12.9082 1.10093 13.7076 2.18604L21.7965 13.1672C22.7693 14.4878 21.8264 16.3534 20.1862 16.3534L4.00833 16.3534C2.36817 16.3534 1.4253 14.4878 2.39805 13.1672L10.487 2.18604Z" fill="#376720"/>
                         </svg> 
                         : <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
