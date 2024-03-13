@@ -122,7 +122,7 @@ export default function FundInput(props: any) {
     [2.7, 3.3, 4.4, 5.3, 6.3, 5, 10, 7],
     [3.6, 3.2, 5.3, 3.5, 6.2, 8, 6, -10],
     [3.6, 3.2, 5.3, 3.5, 6.8, 5, 8, 13.6],
-    [3.6, 3.2, 5.3, 3.5, 6.7, 8, -4.5, 3]];
+    [3.6, 2.7, 5.3, 3.5, 6.7, 8, -4.5, 3]];
 
     const svgList = [
         <svg key="analyst" width="161" height="133" viewBox="0 0 161 133" fill="none" xmlns="http://www.w3.org/2000/svg">
