@@ -177,6 +177,7 @@ h1 a{
   margin: 0  1%;
   font-size: 14px;
   background-color: #CEF7BB;
+  line-height: 15px;
 }
 
 .slider-concepts .slider-box label{
@@ -240,7 +241,7 @@ h1 a{
 }
 
 .simulator .left{
-  flex: 0 0 35%;
+  flex: 0 0 48%;
 }
 
 .simultor-input {
@@ -306,11 +307,9 @@ h1 a{
     margin-right: 1.3%;
 }
 .continue{
-    /* position: absolute; */
     order: 3;
     float: left;
-    margin-left: -16.5%;
-    /* grid-column: 2; */
+    margin-left: -100px;
     grid-row: 2; 
     cursor: pointer;
     margin-top: 10px;
@@ -596,7 +595,7 @@ h1 a{
 /*Simulator output*/
 .pred-elements{
     background-color: var(--tertiary-color);
-    border-radius: 15px;
+    border-radius: 12px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -640,7 +639,7 @@ h1 a{
 
   #gen-savings{
     background-color: #C9F4B5;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0px 0px 12px 12px;
     padding: 20px;
     padding-bottom: 7px;
   }
@@ -686,16 +685,15 @@ h1 a{
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-  
   }
   .modal-content {
     background-color: var(--secondery-color);
-    color: var(--forth-color);
+    color: white;
     margin: auto;
     padding: 20px 30px;
     width: 40%;
     border-radius: 20px;
-    font-family: var(--primary-font-med);
+    font-family: var(--primary-font);
     font-size: 20px;
     padding-bottom: 15px;
     padding-right: 20px;
@@ -882,6 +880,31 @@ h1 a{
 
   /*Comparison Tab*/
   .comparison-tab{
+    width: 248px;
+    /* display: ab; */
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+  }
+
+  .comparison-tab #plus-button{
+    order:1;
+    border: none;
+    padding: 0;
+    /* border-radius: 20px; */
+    background-color: var(--primary-color);
+    cursor: pointer;
+  }
+
+  .comparison-tab #sim-button{
+    order:2;
+    border: none;
+    background-color: var(--primary-color);
+    padding: 0;
+    cursor: pointer;
+  }
+  /* .comparison-tab{
     width: 13%;
     background-color: var(--forth-color);
     margin: 3%;
@@ -892,17 +915,17 @@ h1 a{
     font-family: var(--primary-font);
     display: flex;
     color: #fff;
-  }
+  } */
 
-   .comparison-tab button{
-    /* border-radius: 10px; */
-    /* padding: 8px; */
+   /* .comparison-tab button{
+    border-radius: 10px;
+    padding: 8px;
     border-style:solid;
     border: none;
     font-family: var(--primary-font);
     font-size: 18px;
-  }
-  .comparison-tab>button:nth-child(odd){
+  } */
+  /* .comparison-tab>button:nth-child(odd){
     color: #fff;
     flex: 0 0 85%;
     padding: 2% 0;
@@ -910,18 +933,18 @@ h1 a{
     background-color: var(--secondery-color);
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-  }
-  .comparison-tab>button:nth-child(odd):hover{
+  } */
+  /* .comparison-tab>button:nth-child(odd):hover{
     color: var(--secondery-color);
     background-color: var(--primary-color);
-  }
-  .comparison-tab>button:nth-child(even){
+  } */
+  /* .comparison-tab>button:nth-child(even){
     flex: 0 0 15%;
     background-color: var(--forth-color);
     color: var(--secondery-color);
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-  }
+  } */
   .comparison-tab>button:nth-child(even):hover{
     color: var(--secondery-color);
     background-color: var(--primary-color);
@@ -935,7 +958,7 @@ width:30px;
 height:25px;
 padding-top: 5px;
 text-align: center;
-left: 95%;
+left: 5%;
 bottom: 40%;
 border-radius: 50%;
 color:var(--secondery-color);
@@ -960,6 +983,7 @@ color:var(--secondery-color);
 }
 #compare-modal .buttons{
   text-align: center;
+  padding-bottom: 20px;
 }
 #compare-modal .buttons button{
   background-color: transparent;
@@ -1013,6 +1037,7 @@ color:var(--secondery-color);
   font-family: var(--primary-font-demi);
   padding: 2% 6%;
   border-radius: 10px;
+  cursor:pointer;
 }
 .compare-item button:hover{
   background-color: var(--primary-color);
@@ -1043,24 +1068,33 @@ color:var(--secondery-color);
 
 .compare-no-data{
   text-align: center;
+  padding-top:150px;
+  padding-bottom:150px;
 }
 .compare-no-data svg{
   margin-right: 5%;
 }
 #compare-tooltip{
-  background-color: var(--secondery-color);
-  border-radius: 20px;
-  padding: 1%;
-  color: #fff;
-  font-family: var(--primary-font);
-  width: 20%;
+  /* background-color: var(--secondery-color); */
+  /* border-radius: 20px; */
+  /* padding: 1%; */
+  /* color: #fff; */
+  /* font-family: var(--primary-font); */
+  /* width: 25%; */
   position: absolute;
   bottom: 6%;
-  left: 18%;
+  left: 300px;
 }
 #compare-tooltip h3{
   margin: 0;
   font-family: var(--primary-font-demi);
+  font-size: 24px;
+  line-height: 25px;
+  padding-bottom: 20px;
+}
+
+#compare-tooltip p{
+    font-size: 18px;
 }
 
 
@@ -1145,3 +1179,26 @@ color:var(--secondery-color);
     padding-top: 20px;
     padding-bottom: 5px;
   }
+
+  #logo{
+    padding-left: 100px;
+  }
+
+  #back-arrow-button{
+    cursor: pointer;
+  }
+
+  #fine-print{
+    font-size: 14px;
+    padding-bottom: 0px;
+  }
+
+#compare-modal h4{
+    display: inline;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    font-family: var(--primary-font-bold);
+    font-size: 24px;
+    color: black;
+}
