@@ -597,7 +597,7 @@ h1 a{
     background-color: var(--tertiary-color);
     border-radius: 12px;
     position: absolute;
-    bottom: 0;
+    /* bottom: 100px; */
     left: 0;
     margin: 3%;
     display: grid;
@@ -819,14 +819,26 @@ h1 a{
     background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
     width: 1px;
   }
-  
+      /* width: 40%;
+    padding-right: 40px; */
+
   #welcome-modal .modal-content{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr; /*Two columns, one third for the first column, and two-thirds for the second column*/
+    gap: 20px;
     position: fixed;
     top: 30%;
     right: 26%;
     width: 40%;
-    padding-left: 35px;
-    padding-right: 40px;
+    padding-bottom: 0px;
+    padding-top: 30px;
+  }
+
+  #welcome-modal .modal-content #flower{
+    padding-bottom: 0;
+  }
+  #welcome-modal .modal-buttom .right{
+    padding-left: 80px;
   }
 
   #first-modal .modal-content{
@@ -881,11 +893,10 @@ h1 a{
   /*Comparison Tab*/
   .comparison-tab{
     width: 248px;
-    /* display: ab; */
     border-radius: 20px;
     position: absolute;
     bottom: 10px;
-    left: 25px;
+    left: 30px;
   }
 
   .comparison-tab #plus-button{
@@ -1075,14 +1086,8 @@ color:var(--secondery-color);
   margin-right: 5%;
 }
 #compare-tooltip{
-  /* background-color: var(--secondery-color); */
-  /* border-radius: 20px; */
-  /* padding: 1%; */
-  /* color: #fff; */
-  /* font-family: var(--primary-font); */
-  /* width: 25%; */
   position: absolute;
-  bottom: 6%;
+  bottom: 10px;
   left: 300px;
 }
 #compare-tooltip h3{
