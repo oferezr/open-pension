@@ -59,7 +59,7 @@ export default function RouteInput(props: any) {
         <div className={`simulator-input ${isTab2Open ? 'tab-open' : 'tab-closed'}`} style={!tab1Filled ? { opacity: 0.5 } : undefined}>
             <div className='tab-container'>
                 <button className="arrow" onClick={handleToggleTab} disabled={!continue1Clikced}>
-                    {isTab1Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {isTab2Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.487 2.18604C11.2863 1.10093 12.9082 1.10093 13.7076 2.18604L21.7965 13.1672C22.7693 14.4878 21.8264 16.3534 20.1862 16.3534L4.00833 16.3534C2.36817 16.3534 1.4253 14.4878 2.39805 13.1672L10.487 2.18604Z" fill="#376720"/>
                         </svg> 
                         : <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +114,7 @@ export default function RouteInput(props: any) {
                                     </div>
                                     <div className="slider-container">
                                         <div className="item">בטחון</div>
-                                        <input type="range" min="0" max="1" step="0.05" onChange={change_value} id="route_slider" className="range-input" />
+                                        <input type="range" min="0" max="1" step="0.05" onChange={change_value} id="route_slider" className="range-input" value={route} style={{background:`linear-gradient(to left, ${seconderyColor} ${route*100}%, ${primaryColor} ${route*100}%)`}}/>
                                         <div className="item">תשואה</div>
                                         <div className="slider-background">
                                             <div></div>

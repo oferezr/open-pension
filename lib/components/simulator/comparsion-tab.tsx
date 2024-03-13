@@ -172,10 +172,11 @@ export default function ComparisonTab(props: any) {
                             עמוד הסימולציות שלך ריק :(
                         </h2>
                     </div>}
-                    <div className="buttons">
+                    {compare_list.length>0 &&<div className="buttons">
                         <button onClick={remove_all}>להסרת הכל</button>
                         <button onClick={savePDF}>הורדת PDF</button>
-                    </div>
+                    </div>}
+                    
                     <div className="fine-print">
                         <p>תוצאות הסימולטור לא מהוות המלצה או תחליף לייעוץ פנסיוני.</p>
                     </div>

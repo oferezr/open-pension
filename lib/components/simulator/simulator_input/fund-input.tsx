@@ -35,7 +35,8 @@ export default function FundInput(props:any) {
     const [tab3Clicked, setTab3Clicked] = useState(false);
     // const [route, setRoute] = Array.isArray(props.route) ? props.route : [null, () => {}];
     const [route, setRoute] = props.route;
-    const [yearly,setYearly] = props.fund;
+    const [yearly,setYearly] = props.yearly;
+    const [fund,setFund] = props.fund;
     console.log(route)
     // condition for opening tab3 for the first time
     const [tab1Filled, setTab1Filled] = props.tab1Filled;
@@ -108,6 +109,7 @@ const [backgroundColor, setBackgroundColor] = useState<string[]>(['#BCECA5', /* 
         setSelectedItemIndex(index);
         console.log(fixedYieldsList[index][Math.min(Math.floor(route * fixedYieldsList[index].length), fixedYieldsList[index].length - 1)]*10)
         setYearly(fixedYieldsList[index][Math.min(Math.floor(route * fixedYieldsList[index].length), fixedYieldsList[index].length - 1)]*10)
+        setFund(index);
     }
 
 // route is a floating point number that is the result from the privius tab slider cohice
@@ -348,7 +350,7 @@ const [backgroundColor, setBackgroundColor] = useState<string[]>(['#BCECA5', /* 
         <div className={`simulator-input ${isTab3Open ? 'tab-open' : 'tab-closed'}`} style={!tab2Filled ? { opacity: 0.5 } : undefined}>
             <div className='tab-container'>
                 <button className="arrow" onClick={handleToggleTab}>
-                    {isTab1Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {isTab2Open ? <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.487 2.18604C11.2863 1.10093 12.9082 1.10093 13.7076 2.18604L21.7965 13.1672C22.7693 14.4878 21.8264 16.3534 20.1862 16.3534L4.00833 16.3534C2.36817 16.3534 1.4253 14.4878 2.39805 13.1672L10.487 2.18604Z" fill="#376720"/>
                         </svg> 
                         : <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">

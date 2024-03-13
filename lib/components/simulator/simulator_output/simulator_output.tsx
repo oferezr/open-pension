@@ -15,9 +15,9 @@ export default function SimulatorOutput(props: any) {
     const [tabFilled, setTabFilled] = props.filled;
     const grid_columns = [1, 2, 3, 4, 5, 6, 7, 8];
     const grid_rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-    const pred_elems_margin_bottom = tabFilled?"6%":"3%";
+    // Change here the amount of px or % to move the pred elements up
+    const pred_elems_margin_bottom = tabFilled?"20px":"0";
     const [continue3Clicked, setcontinue3Clicked] = props.continue3Clicked;
-    // const [distanceFromBottom, setDistanceFromBottom] = useState(0);
 
     const openComaprisons = () => {
         if (continue3Clicked === true){
@@ -25,16 +25,6 @@ export default function SimulatorOutput(props: any) {
         }
     };
 
-    // const OtherComponent = ({ continue3Clicked }) => {
-    //     const [distanceFromBottom, setDistanceFromBottom] = useState(50);
-    
-        // useEffect(() => {
-        //     if (continue3Clicked) {
-        //         // Change the distance from bottom here when isButtonClicked becomes true
-        //         setDistanceFromBottom(prevDistance => prevDistance - 20); // Move the object up by 20px
-        //     }
-        // }, [continue3Clicked]);
-    
 
     return (
         <div style={{opacity:active?1:0.5}}>
@@ -49,8 +39,8 @@ export default function SimulatorOutput(props: any) {
                     )}
                 </div>
             </div>
-            {/* style={{ position: 'fixed', bottom: distanceFromBottom, left: 20 }} */}
-            <div className="pred-elements"
+            
+            <div className="pred-elements"style={{ position: 'fixed', bottom: pred_elems_margin_bottom }}
            >
                 <div id="monthly" className="elm">
                     <div className="pred-icon">

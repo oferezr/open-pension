@@ -126,14 +126,14 @@ export default function PersonalInput(props:any) {
                                 <label className='radio-container'>
                                     <input
                                     type="radio" id="female" name="option" value="65"
-                                    onChange={handleRadioChange} />
+                                    onChange={handleRadioChange} checked={!isMale && tab1Filled}/>
                                     <span className="checkmark"></span>
                                     <span className='gender'>65 (נקבה)</span>
                                 </label>
                                 <label className='radio-container'>
                                     <input
                                     type="radio" id="male" name="option" value="67"
-                                    onChange={handleRadioChange} />
+                                    onChange={handleRadioChange} checked={isMale && tab1Filled}/>
                                     <span className="checkmark"></span>
                                     <span className='gender'>67 (זכר)</span>
                                 </label>

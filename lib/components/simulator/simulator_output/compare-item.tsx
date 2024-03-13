@@ -1,15 +1,16 @@
 import { CompareSave } from "@/app/simulator/page";
-import { monthly_income_by_by_sliders, saving_by_by_sliders } from "@/lib/utils/client";
+import { monthly_by_yearly, saving_by_yearly } from "@/lib/utils/client";
 
 export function CompareItem(props: any) {
     const save:CompareSave = props.item;
     const [compare_list, setCompareList] = props.compare_list;
-    const routes = ["פנסיה מקיפה מסלול הלכתי", "פנסיה מקיפה מסלול לבני 60 ומעלה", "פנסיה מקיפה מסלול לבני 50-60", "פנסיה מקיפה מסלול לבני 50 ומטה", "פנסיה מקיפה מסלול מניות", "פנסיה מקיפה מסלול מניות חול", "פנסיה מקיפה מסלול מניות פאסיבי", "פנסיה מקיפה מסלול מדד S&P 500"];
+    const routes = ["מסלול הלכתי", "מסלול לבני 60 ומעלה", "מסלול לבני 50-60", "מסלול לבני 50 ומטה", "מסלול מניות", "מסלול מניות חול", "מסלול מניות פאסיבי", "מסלול מדד S&P 500"];
     const route = routes[ Math.round( save.route*(routes.length-1))];
-    const fund = "מיטב דש";
+    const funds = ["אנליסט" , "מור פנסיה","אלטשולר שחם","מגדל","הפניקס","כלל","מנורה מבטחים","מיטב דש","הראל"];
+    const fund = funds[save.fund];
     const interest_slider = 0.5;
-    const monthly = monthly_income_by_by_sliders(save.salary, save.age, interest_slider, save.route, save.is_male);
-    const total_savings = saving_by_by_sliders(save.salary, save.age, interest_slider, save.route, save.is_male);
+    const monthly = monthly_by_yearly(save.salary, save.age, save.yearly, save.is_male);
+    const total_savings = saving_by_yearly(save.salary, save.age, save.yearly, save.is_male);
     function remove(){
         setCompareList(compare_list.filter((i:CompareSave)=>i!=save))
     }
@@ -29,7 +30,7 @@ export function CompareItem(props: any) {
         </div>
         <div className="compare-item-elem" style={{borderBottomLeftRadius:is_last?"10px":"0px"}}>
             <p>{fund}</p>
-            <label>7.2%</label>
+            <label>{save.yearly}%</label>
         </div>
         <button onClick={remove}>להסרה</button>
     </div>);
